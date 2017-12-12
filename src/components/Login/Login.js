@@ -18,13 +18,20 @@ class Login extends Component {
         })
     }
 
+    handleSubmit = () => {
+        //this.state
+        //send to fetch post
+        backEndApiPost()
+        console.log('Submit')
+    }
+
     render() {
         return (
             <div>
                 <form>
                     <input className='username' type='text' placeholder='Username' onChange={this.handleInputChange} value={this.state.username}/>
                     <input className='password' type='password' placeholder='Password' onChange={this.handleInputChange} value={this.state.password}/>
-                    <button type='submit'>Submit</button>
+                    <button type='submit' onClick={this.handleSubmit}>Submit</button>
                 </form>
             </div>
         )
