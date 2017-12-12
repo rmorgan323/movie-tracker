@@ -9,10 +9,23 @@ class Login extends Component {
         }
     };
 
+    handleInputChange = (e) => {
+        let value = e.target.value;
+        let property = e.target.className
+
+        this.setState({
+            [property]: value
+        })
+    }
+
     render() {
         return (
             <div>
-                Login Page!
+                <form>
+                    <input className='username' type='text' placeholder='Username' onChange={this.handleInputChange} value={this.state.username}/>
+                    <input className='password' type='password' placeholder='Password' onChange={this.handleInputChange} value={this.state.password}/>
+                    <button type='submit'>Submit</button>
+                </form>
             </div>
         )
     }
