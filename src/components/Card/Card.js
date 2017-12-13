@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 // import './Card.css';
 
-export const Card = ( {cardImage, cardTitle} ) => {
-
+const Card = ( {cardImage, cardTitle} ) => {
 	return (
 		<div>
 			<div><img src={cardImage} alt={cardTitle} /></div>
@@ -10,3 +9,5 @@ export const Card = ( {cardImage, cardTitle} ) => {
 		</div>
 	)
 }
+
+export default Card;
