@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Login from '../Login/Login';
+import SignUp from '../SignUp/Signup';
 import CardContainer from '../CardContainer/CardContainer';
 import { getRecentMovies } from '../helper/apiCalls';
 import { makeMovieArray } from '../../actions';
@@ -27,6 +28,7 @@ class App extends Component {
         <Header />
 
         <Route path='/login' component={Login} />
+        <Route path='/signup' component={SignUp}/>
         <Route exact path='/' component={CardContainer} />
       </div>
     );
@@ -47,4 +49,4 @@ class App extends Component {
     }
   }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
