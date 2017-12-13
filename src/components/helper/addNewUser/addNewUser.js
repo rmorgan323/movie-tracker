@@ -1,4 +1,4 @@
-export const backEndApiPost = async (user) => {
+export const addNewUser = async (user) => {
     try {
         const fetchBackEndApi = await fetch('http://localhost:3000/api/users/new', {
             method: 'POST',
