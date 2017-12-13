@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
-import Login from '../Login/Login';
 import { Route } from 'react-router-dom';
-import './App.css';
-import { getRecentMovies } from '../helper/apiCalls';
-import CardContainer from '../CardContainer/CardContainer';
 import { connect } from 'react-redux';
+import Login from '../Login/Login';
+import CardContainer from '../CardContainer/CardContainer';
+import { getRecentMovies } from '../helper/apiCalls';
 import { makeMovieArray } from '../../actions';
+import './App.css';
 
 
 class App extends Component {
@@ -26,8 +26,8 @@ class App extends Component {
       <div className="App">
         <Header />
 
-        <Route exact path='/' component={ CardContainer} />
         <Route path='/login' component={Login} />
+        <Route exact path='/' component={CardContainer} />
       </div>
     );
   }
