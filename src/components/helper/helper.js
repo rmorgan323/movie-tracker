@@ -1,5 +1,4 @@
 export const cleanRecentData = (moviesObj) => {
-	console.log(moviesObj)
 	const cleanData = moviesObj.reduce((cleanArray, movie) => {
 		cleanArray.push({
 			userId: null,
