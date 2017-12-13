@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { backEndApiPost } from '../helper/backEndApiPost/backEndApiPost';
 
 class Login extends Component {
     constructor() {
         super();
         this.state = {
-            username: '',
-            password: ''
+            name: '',
+            password: '',
+            email: ''
         }
     };
 
@@ -18,13 +20,19 @@ class Login extends Component {
         })
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        backEndApiPost(this.state)
+    }
+
     render() {
         return (
             <div>
-                <form>
-                    <input className='username' type='text' placeholder='Username' onChange={this.handleInputChange} value={this.state.username}/>
+                <form onSubmit={this.handleSubmit}>
+                    <input className='name' type='text' placeholder='Username' onChange={this.handleInputChange} value={this.state.name}/>
                     <input className='password' type='password' placeholder='Password' onChange={this.handleInputChange} value={this.state.password}/>
-                    <button type='submit'>Submit</button>
+                    <input className='email' type='text' placeholder='Email' onChange={this.handleInputChange} value={this.state.email}/>
+                    <button type='submit' onClick={this.handleSubmit}>Submit</button>
                 </form>
             </div>
         )
