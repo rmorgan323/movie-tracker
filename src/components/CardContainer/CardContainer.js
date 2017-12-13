@@ -4,6 +4,7 @@ import Card from '../Card/Card';
 import { connect } from 'react-redux';
 
  const CardContainer = ( props ) => {
+	
 	const cards = props.movies.map((card) => {
 		console.log(card)
 		return (

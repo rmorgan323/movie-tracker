@@ -42,7 +42,7 @@ class App extends Component {
   const mapDispatchToProps = (dispatch) =>{
     return {
       storeMovies: (movies) => {
-        dispatch(makeMovieArray(...movies))
+        dispatch(makeMovieArray(movies))
       }
     }
   }
