@@ -5,9 +5,9 @@ class Login extends Component {
     constructor() {
         super();
         this.state = {
-            username: '',
+            name: '',
             password: '',
-            favorites: []
+            email: ''
         }
     };
 
@@ -22,9 +22,6 @@ class Login extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        //this.state
-        //send to fetch post
-        console.log('Submit')
         backEndApiPost(this.state)
     }
 
@@ -32,8 +29,9 @@ class Login extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input className='username' type='text' placeholder='Username' onChange={this.handleInputChange} value={this.state.username}/>
+                    <input className='name' type='text' placeholder='Username' onChange={this.handleInputChange} value={this.state.name}/>
                     <input className='password' type='password' placeholder='Password' onChange={this.handleInputChange} value={this.state.password}/>
+                    <input className='email' type='text' placeholder='Email' onChange={this.handleInputChange} value={this.state.email}/>
                     <button type='submit' onClick={this.handleSubmit}>Submit</button>
                 </form>
             </div>
