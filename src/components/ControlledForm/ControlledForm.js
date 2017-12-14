@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import { addNewUser } from '../helper/addNewUser/addNewUser';
 import { userSignIn } from '../helper/userSignIn/userSignIn';
 
-class Login extends Component {
+class ControlledForm extends Component {
     constructor() {
         super();
         this.state = {
@@ -24,14 +23,13 @@ class Login extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        let endPoint = this.props.location.pathname
+        const endPoint = this.props.location.pathname
 
         if(endPoint === '/signup') {
             addNewUser(this.state);
         } else {
             const callback = await userSignIn(this.state)
-            console.log(callback.status)
-            callback.status === 200 ? (<Redirect from='/login' to='/' />) : console.log('User does not match')
+            callback.status === 200 ? this.props.history.push('/') : console.log('User does not match')
         }
     }
 
@@ -45,11 +43,11 @@ class Login extends Component {
                     <input className='email' type='text' placeholder='Email' onChange={this.handleInputChange} value={this.state.email}/>
                     <input className='password' type='password' placeholder='Password' onChange={this.handleInputChange} value={this.state.password}/>
                     <button type='submit' onClick={this.handleSubmit}>Submit</button>
-                </form>
+                    </form>
             </div>
         )
     }
 
 }
 
-export default Login;
+export default ControlledForm;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import { Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Login from '../Login/Login';
+import ControlledForm from '../ControlledForm/ControlledForm';
 import CardContainer from '../CardContainer/CardContainer';
 import { getRecentMovies } from '../helper/apiCalls';
 import { makeMovieArray } from '../../actions';
@@ -26,8 +26,8 @@ class App extends Component {
       <div className="App">
         <Header />
 
-        <Route path='/login' component={Login} />
-        <Route path='/signup' component={Login}/>
+        <Route path='/login' component={ControlledForm} />
+        <Route path='/signup' component={ControlledForm}/>
         <Route exact path='/' component={CardContainer} />
       </div>
     );
