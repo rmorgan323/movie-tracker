@@ -5,9 +5,8 @@ import { connect } from 'react-redux';
 import ControlledForm from '../ControlledForm/ControlledForm';
 import CardContainer from '../CardContainer/CardContainer';
 import { getRecentMovies } from '../helper/apiCalls';
-import { makeMovieArray } from '../../actions';
+import { makeMovieArray, getMovies } from '../../actions';
 import './App.css';
-
 
 class App extends Component {
   constructor() {
@@ -15,10 +14,8 @@ class App extends Component {
     this.state = {};
   }
 
-  componentDidMount = async () => {
-    const recentMovies = await getRecentMovies();
-
-   this.props.storeMovies(recentMovies)
+  componentDidMount = () => {
+    this.props.storeMovies()
   }
 
   render() {
@@ -34,16 +31,16 @@ class App extends Component {
   }
 }
 
-  const mapStateToProps = (store) =>{
+  const mapStateToProps = (store) => {
     return {
       movies: store.movies
     }
   }
 
-  const mapDispatchToProps = (dispatch) =>{
+  const mapDispatchToProps = (dispatch) => {
     return {
-      storeMovies: (movies) => {
-        dispatch(makeMovieArray(movies))
+      storeMovies: () => {
+        dispatch(getMovies())
       }
     }
   }
