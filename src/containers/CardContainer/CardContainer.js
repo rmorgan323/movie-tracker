@@ -3,7 +3,7 @@ import './CardContainer.css';
 import Card from '../../components/Card/Card';
 import { connect } from 'react-redux';
 
- const CardContainer = ( props ) => {
+export const CardContainer = ( props ) => {
 	const cards = props.movies.map((card) => {
 		return (
 			<Card
