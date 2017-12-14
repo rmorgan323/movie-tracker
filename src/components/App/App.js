@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import { Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import ControlledForm from '../ControlledForm/ControlledForm';
+import ControlledForm from '../../containers/CardContainer/CardContainer';
 import CardContainer from '../CardContainer/CardContainer';
 import { getRecentMovies } from '../helper/apiCalls';
 import { makeMovieArray, getMovies } from '../../actions';
