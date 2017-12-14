@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './CardContainer.css';
-import Card from '../Card/Card';
+import Card from '../../components/Card/Card';
 import { connect } from 'react-redux';
 
  const CardContainer = ( props ) => {
-	
 	const cards = props.movies.map((card) => {
 		return (
-			<Card 
+			<Card
 				key={card.movieId}
 				userId={card.userId}
 				id={card.movieId}
