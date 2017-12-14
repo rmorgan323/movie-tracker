@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import makeMoviesReducer from './makeMoviesReducer.js'
+import makeMoviesReducer from './makeMoviesReducer/makeMoviesReducer';
 
 const rootReducer = combineReducers ({
   movies: makeMoviesReducer
