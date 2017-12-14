@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 export const CardContainer = ( props ) => {
-	console.log(props)
 	const cards = props.movies.map((card) => {
 		return (
 			<Card
