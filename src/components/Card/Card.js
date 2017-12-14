@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-// import './Card.css';
+import './Card.css';
 
-const Card = ( {cardImage, cardTitle} ) => {
+const Card = ( {image, title, releaseDate, voteAverage, overview} ) => {
 	return (
-		<div>
-			<div><img src={cardImage} alt={cardTitle} /></div>
-			<h2>{cardTitle}</h2>
+		<div className="card">
+			<div><img src={image} alt={title} /></div>
+			<h2>{title}</h2>
+			<h4>Released: {releaseDate}</h4>
+			<h4>Average Review: {voteAverage}</h4>
+			<h4 className="overview">Overview: {overview}</h4>
 		</div>
 	)
 }

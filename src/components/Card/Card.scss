@@ -1,0 +1,23 @@
+.card {
+	width: 300px;
+	background-color: lightgrey;
+	padding: 10px;
+	margin: 10px;
+
+	img {
+		width: 280px;
+	}
+
+	h2 {
+		text-align: center;
+	}
+
+	h2, h4 {
+		margin: 8px 0;
+	}
+
+	.overview {
+		height: 91px;
+		overflow: scroll;
+	}
+}
