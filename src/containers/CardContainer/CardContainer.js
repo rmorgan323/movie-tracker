@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import './CardContainer.css';
 import Card from '../../components/Card/Card';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 export const CardContainer = ( props ) => {
+	console.log(props)
 	const cards = props.movies.map((card) => {
 		return (
 			<Card
@@ -37,4 +39,4 @@ const mapDispatchToProps = (dispatch) =>{
 }
 
 
-export default connect(mapStateToProps, null)(CardContainer)
+export default withRouter(connect(mapStateToProps, null)(CardContainer))
