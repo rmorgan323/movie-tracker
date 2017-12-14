@@ -4,30 +4,16 @@ import { shallow } from 'enzyme';
 import mockMovie from '../../data/mockMovie';
 
 describe('CardContainer tests', () => {
-  it('Should exist', () => {
-    const mockProps = {
-      movies: []
-    };
-    console.log(mockProps);
-
-    const renderedCardContainer = shallow(<CardContainer props={mockProps} />);
-    console.log(renderedCardContainer.debug());
-
-    expect(renderedCardContainer).toBeDefined();
-  });
-
   it('Should match the snapshot', () => {
-    const renderedCardContainer = shallow(<CardContainer />);
+    const renderedCardContainer = shallow(<CardContainer movies={[]} />);
 
     expect(renderedCardContainer).toMatchSnapshot();
   });
 
   it('Should display cards from props', () => {
-    const mockProps = {
-      movies: [mockMovie]
-    };
+    const mockMovies = [mockMovie]
 
-    const renderedCardContainer = shallow(<CardContainer props={mockProps} />);
+    const renderedCardContainer = shallow(<CardContainer movies={mockMovies} />);
 
     expect(renderedCardContainer.find('Card').length).toEqual(1);
   });
