@@ -31,18 +31,18 @@ class App extends Component {
   }
 }
 
-  const mapStateToProps = (store) => {
-    return {
-      movies: store.movies
-    }
+const mapStateToProps = (store) => {
+  return {
+    movies: store.movies
   }
+}
 
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      storeMovies: () => {
-        dispatch(getMovies())
-      }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    storeMovies: () => {
+      dispatch(getMovies())
     }
   }
+}
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))

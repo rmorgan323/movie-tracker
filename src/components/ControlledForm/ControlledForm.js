@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { addNewUser } from '../helper/addNewUser/addNewUser';
+import { addUser } from '../../actions/index.js'
 import { userSignIn } from '../helper/userSignIn/userSignIn';
+import * as actions from '../../actions';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 
 class ControlledForm extends Component {
     constructor() {
@@ -24,14 +29,22 @@ class ControlledForm extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         const endPoint = this.props.location.pathname
-
+        // debugger;
         if(endPoint === '/signup') {
-            addNewUser(this.state);
+            const callback = this.props.getUsers(this.state);
+            console.log(callback)   
+            this.props.user.status === 200 ? this.props.createUser(this.state) : console.log('500')
+            console.log(this.props.user)
         } else {
             const callback = await userSignIn(this.state)
             callback.status === 200 ? this.props.history.push('/') : console.log('User does not match')
         }
     }
+
+    // handleSubmit = async (e) => {
+    //     e.preventDefault();
+
+    // }
 
     render() {
         let endPoint = this.props.location.pathname
@@ -50,4 +63,20 @@ class ControlledForm extends Component {
 
 }
 
-export default ControlledForm;
+const mapStateToProps = (store) => {
+  return {
+    user: store.user
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getUsers: (user) => {
+      dispatch(actions.fetchUsers(user))
+    }
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ControlledForm))
+
+// export default ControlledForm;
