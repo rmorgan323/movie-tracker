@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { addNewUser } from '../helper/addNewUser/addNewUser';
-import { addUser } from '../../actions/index.js'
-import { userSignIn } from '../helper/userSignIn/userSignIn';
+import { userSignIn } from '../../helper/userSignIn/userSignIn';
 import * as actions from '../../actions';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -32,7 +30,7 @@ class ControlledForm extends Component {
         // debugger;
         if(endPoint === '/signup') {
             const callback = this.props.getUsers(this.state);
-            console.log(callback)   
+            console.log(callback)
             this.props.user.status === 200 ? this.props.createUser(this.state) : console.log('500')
             console.log(this.props.user)
         } else {
@@ -40,11 +38,6 @@ class ControlledForm extends Component {
             callback.status === 200 ? this.props.history.push('/') : console.log('User does not match')
         }
     }
-
-    // handleSubmit = async (e) => {
-    //     e.preventDefault();
-
-    // }
 
     render() {
         let endPoint = this.props.location.pathname

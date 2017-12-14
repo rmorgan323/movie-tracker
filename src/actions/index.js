@@ -1,6 +1,6 @@
-import { getRecentMovies } from '../components/helper/apiCalls';
-import { addNewUser } from '../components/helper/addNewUser/addNewUser';
-import getUser from '../components/helper/getUser.js'
+import { getRecentMovies } from '../helper/apiCalls';
+import { addNewUser } from '../helper/addNewUser/addNewUser';
+import getUser from '../helper/getUser.js'
 
 export const makeMovieArray = (movies) => ({
   type: 'MAKE_MOVIE_ARRAY',

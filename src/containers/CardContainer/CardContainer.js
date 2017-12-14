@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './CardContainer.css';
 import Card from '../../components/Card/Card';
 import { connect } from 'react-redux';
