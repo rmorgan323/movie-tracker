@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './CardContainer.css';
+import './CardContainer.css';
 import Card from '../Card/Card';
 import { connect } from 'react-redux';
 
@@ -9,13 +9,19 @@ import { connect } from 'react-redux';
 		return (
 			<Card 
 				key={card.movieId}
-				cardImage={card.image}
-				cardTitle={card.title} />
+				userId={card.userId}
+				id={card.movieId}
+				title={card.title}
+				image={card.image}
+				releaseDate={card.releaseDate}
+				voteAverage={card.voteAverage}
+				overview={card.overview}
+				favorite={card.favorite} />
 		)
 	})
 
 	return (
-		<div>
+		<div className="card-container">
 			{cards}
 		</div>
 	)
