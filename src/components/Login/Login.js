@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { backEndApiPost } from '../helper/backEndApiPost/backEndApiPost';
+import { Redirect } from 'react-router-dom';
+import { addNewUser } from '../helper/addNewUser/addNewUser';
+import { userSignIn } from '../helper/userSignIn/userSignIn';
 
 class Login extends Component {
     constructor() {
@@ -20,18 +22,28 @@ class Login extends Component {
         })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
-        backEndApiPost(this.state)
+        let endPoint = this.props.location.pathname
+
+        if(endPoint === '/signup') {
+            addNewUser(this.state);
+        } else {
+            const callback = await userSignIn(this.state)
+            console.log(callback.status)
+            callback.status === 200 ? (<Redirect from='/login' to='/' />) : console.log('User does not match')
+        }
     }
 
     render() {
+        let endPoint = this.props.location.pathname
+
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input className='name' type='text' placeholder='Username' onChange={this.handleInputChange} value={this.state.name}/>
-                    <input className='password' type='password' placeholder='Password' onChange={this.handleInputChange} value={this.state.password}/>
+                    {endPoint === '/signup' && <input className='name' type='text' placeholder='Name' onChange={this.handleInputChange} value={this.state.name}/>}
                     <input className='email' type='text' placeholder='Email' onChange={this.handleInputChange} value={this.state.email}/>
+                    <input className='password' type='password' placeholder='Password' onChange={this.handleInputChange} value={this.state.password}/>
                     <button type='submit' onClick={this.handleSubmit}>Submit</button>
                 </form>
             </div>
