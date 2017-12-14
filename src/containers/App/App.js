@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import Header from '../Header/Header';
 import { Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Header from '../../components/Header/Header';
 import ControlledForm from '../ControlledForm/ControlledForm';
-import CardContainer from '../../containers/CardContainer/CardContainer';
-import { getRecentMovies } from '../helper/apiCalls';
-import { makeMovieArray, getMovies } from '../../actions';
+import CardContainer from '../CardContainer/CardContainer';
+import { getMovies } from '../../actions';
 import './App.css';
 
 class App extends Component {
