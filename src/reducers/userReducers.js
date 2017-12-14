@@ -14,7 +14,6 @@ const userReducers = (store = {}, action) => {
             ));
 
         case 'SET_USER':
-        console.log('action', action)
             return (Object.assign({},
                 {
                     signedIn: true,
@@ -27,6 +26,8 @@ const userReducers = (store = {}, action) => {
                 }
             ));
 
+        case 'SIGNUP_ERROR':
+            return action.msg
 
         default:
             return store

@@ -26,20 +26,22 @@ export const setUser = (user) =>({
 
 export const fetchUsers = (user) => async (dispatch) => {
 	const response = await addNewUser(user);
-	if(response.status === 'success'){
+	if (response.status === 'success'){
 		const user = await getUser(response.id)
 		dispatch(setUser(user))
-	} 
+	} else {
+		dispatch(signupFailure('error'))
+	}
 
 }
 
-export const checkUsers = (response) => ({
-	type: 'CHECK_USERS',
-	response
-})
+// export const checkUsers = (response) => ({
+// 	type: 'CHECK_USERS',
+// 	response
+// })
 
-export const signupFailure = (msg) => {
+export const signupFailure = (msg) => ({
 	type: 'SIGNUP_ERROR',
 	msg
-}
+})
 
