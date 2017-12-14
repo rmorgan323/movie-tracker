@@ -24,16 +24,22 @@ class ControlledForm extends Component {
         })
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.user === 'error') {
+            //display error
+        } else if (nextProps.user.signedIn === true) {
+            this.props.history.push('/')
+            //and display some crap
+        }
+    }
+
     handleSubmit = async (e) => {
         e.preventDefault();
         const endPoint = this.props.location.pathname
-        // debugger;
-        if(endPoint === '/signup') {
-            const callback = this.props.getUsers(this.state);
-            console.log(callback)
-            this.props.user.status === 200 ? this.props.createUser(this.state) : console.log('500')
-            console.log(this.props.user)
-        } else {
+
+        const userCheck = await this.props.getUsers(this.state);
+
+        if (endPoint === '/login') {
             const callback = await userSignIn(this.state)
             callback.status === 200 ? this.props.history.push('/') : console.log('User does not match')
         }
@@ -45,11 +51,28 @@ class ControlledForm extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    {endPoint === '/signup' && <input className='name' type='text' placeholder='Name' onChange={this.handleInputChange} value={this.state.name}/>}
-                    <input className='email' type='text' placeholder='Email' onChange={this.handleInputChange} value={this.state.email}/>
-                    <input className='password' type='password' placeholder='Password' onChange={this.handleInputChange} value={this.state.password}/>
-                    <button type='submit' onClick={this.handleSubmit}>Submit</button>
-                    </form>
+                    {endPoint === '/signup' && 
+                    <input className='name' 
+                           type='text' 
+                           placeholder='Name' 
+                           onChange={this.handleInputChange} 
+                           value={this.state.name} />}
+
+                    <input className='email' 
+                           type='text' 
+                           placeholder='Email' 
+                           onChange={this.handleInputChange} 
+                           value={this.state.email} />
+
+                    <input className='password' 
+                           type='password' 
+                           placeholder='Password' 
+                           onChange={this.handleInputChange} 
+                           value={this.state.password}/>
+
+                    <button type='submit' 
+                            onClick={this.handleSubmit} >Submit</button>
+                </form>
             </div>
         )
     }
