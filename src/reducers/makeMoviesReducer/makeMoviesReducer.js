@@ -1,4 +1,4 @@
-const makeMoviesReducer = (store =[], action) =>{
+const makeMoviesReducer = (store = [], action) =>{
   switch(action.type) {
     case 'MAKE_MOVIE_ARRAY':
       return [...store, ...action.movies]
