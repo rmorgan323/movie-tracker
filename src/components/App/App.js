@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
-import Login from '../Login/Login';
-import { Route } from 'react-router-dom';
-import './App.css';
-import { getRecentMovies } from '../helper/apiCalls';
-import CardContainer from '../CardContainer/CardContainer';
+import { Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import ControlledForm from '../ControlledForm/ControlledForm';
+import CardContainer from '../CardContainer/CardContainer';
+import { getRecentMovies } from '../helper/apiCalls';
 import { makeMovieArray } from '../../actions';
+import './App.css';
 
 
 class App extends Component {
@@ -26,8 +26,9 @@ class App extends Component {
       <div className="App">
         <Header />
 
-        <Route exact path='/' component={ CardContainer} />
-        <Route path='/login' component={Login} />
+        <Route path='/login' component={ControlledForm} />
+        <Route path='/signup' component={ControlledForm}/>
+        <Route exact path='/' component={CardContainer} />
       </div>
     );
   }
@@ -47,4 +48,4 @@ class App extends Component {
     }
   }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
