@@ -31,7 +31,7 @@ export const fetchUsers = (user) => async (dispatch) => {
 		const user = await getUser(response.id)
 		dispatch(setUser(user))
 	} else {
-		dispatch(signupFailure('error'))
+		dispatch(signupFailure('error-signup'))
 	}
 
 }
@@ -53,6 +53,6 @@ export const checkForUser = (user) => async (dispatch) => {
 	if(response.status === 'success'){
 		dispatch(setUser(response.data))
 	} else {
-		dispatch(signupFailure('error'))
+		dispatch(signupFailure('error-login'))
 	}
 }

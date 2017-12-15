@@ -6,7 +6,8 @@ export const checkUser = async (user) =>{
       'Content-Type': 'application/json'
     }
   })
-  if (fetchUserPost.status_code >= 400) {
+   
+  if (fetchUserPost.status >= 400) {
     return fetchUserPost.status
   }
   const jsonResponse = await fetchUserPost.json()
