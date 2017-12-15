@@ -1,6 +1,5 @@
 const userReducers = (store = {}, action) => {
     switch(action.type) {
-        
         case 'SET_USER':
             return (Object.assign({},
                 {
