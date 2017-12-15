@@ -50,3 +50,7 @@ export const checkForUser = (user) => async (dispatch) => {
 export const userLogout = () => ({
 	type: 'USER_LOGOUT',
 })
+
+export const getFavorites = (userId) => async (dispatch) =>{
+	
+}
