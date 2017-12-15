@@ -3,7 +3,9 @@ import './Card.css';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/';
 
-const Card = ({ id, image, userId, title, releaseDate, voteAverage, overview }) => {
+const Card = (props) => {
+	const { id, image, userId, title, releaseDate, voteAverage, overview } = props;
+
   return (
     <div className="card">
       <div>
@@ -25,11 +27,11 @@ export const mapStateToProps = store => {
 };
 
 export const mapDispatchToProps = dispatch => {
-  return {
-    toggleFavorite: userId => {
-      dispatch(actions.getFavorites(userId, id));
-    }
-  };
+  // return {
+  //   // toggleFavorite: props => {
+  //   //   dispatch(actions.getFavorites(props));
+  //   }
+  // };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
