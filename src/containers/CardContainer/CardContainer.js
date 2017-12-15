@@ -5,21 +5,19 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 export const CardContainer = props => {
-let userId;
+  let userId;
 
-if(Object.keys(props.user).length !== 0){
-  userId = props.user.userInfo.id
-} else {
-  userId = null
-}
-
-console.log('containerprops', props)
+  if (Object.keys(props.user).length !== 0) {
+    userId = props.user.userInfo.id;
+  } else {
+    userId = null;
+  }
 
   const cards = props.movies.map(card => {
     return (
       <Card
         key={card.movieId}
-        userId = {userId}
+        userId={userId}
         id={card.movieId}
         title={card.title}
         image={card.image}
@@ -30,7 +28,6 @@ console.log('containerprops', props)
       />
     );
   });
- 
 
   return <div className="card-container">{cards}</div>;
 };
