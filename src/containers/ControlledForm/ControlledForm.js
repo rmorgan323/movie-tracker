@@ -3,6 +3,7 @@ import { userSignIn } from '../../helper/userSignIn/userSignIn';
 import * as actions from '../../actions';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import './ControlledForm.css'
 
 
 class ControlledForm extends Component {
@@ -30,12 +31,13 @@ class ControlledForm extends Component {
 
 
     componentWillReceiveProps(nextProps) {
+     
         if (nextProps.user === 'error-signup') {
-             console.log('signup error')
+           
             this.setState({errorMessage: 'User email is being used. Please use a new email or login if you already have an account'})
         } else if (nextProps.user === 'error-login') {
-          console.log('login error')
-           this.setState({errorMessage: 'email and password do not match please try again or create an account'})
+         
+           this.setState({errorMessage: 'Email and password do not match please try again or create an account'})
 
         } 
         else if (nextProps.user.signedIn === true) {
@@ -54,10 +56,11 @@ class ControlledForm extends Component {
             // const callback = await userSignIn(this.state)
             // callback.status === 200 ? this.props.history.push('/') : console.log('User does not match')
         const userGet = await this.props.checkUsers(this.state.users);
+       
 
         } else if (endPoint === '/signup') {
         const userCheck = await this.props.getUsers(this.state.users);
-
+      
         }
     }
 
@@ -66,13 +69,17 @@ class ControlledForm extends Component {
 
         return (
             <div>
+              <div className = "error-message">
+                {this.state.errorMessage}
+              </div>
                 <form onSubmit={this.handleSubmit}>
                     {endPoint === '/signup' && 
-                    <input className='name' 
-                           type='text' 
-                           placeholder='Name' 
-                           onChange={this.handleInputChange} 
-                           value={this.state.users.name} />}
+                    
+                      <input className='name' 
+                             type='text' 
+                             placeholder='Name' 
+                             onChange={this.handleInputChange} 
+                             value={this.state.users.name} />}
 
                     <input className='email' 
                            type='text' 
@@ -88,10 +95,9 @@ class ControlledForm extends Component {
 
                     <button type='submit' 
                             onClick={this.handleSubmit} >Submit</button>
+                
                 </form>
-                <div className = "error-message">
-                  {this.state.errorMessage}
-                </div>
+                
             </div>
         )
     }

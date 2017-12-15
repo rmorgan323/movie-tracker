@@ -11,13 +11,19 @@
 		color: #fff;
 	}
 
+	.header {
+		display: flex;
+		flex-direction: row;
+	}
+
+
 	.login, .signup {
 		position: absolute;
 		right: 20px;
 	}
 
 	.login {
-		top: 20px;
+		top: 20px;		
 	}
 
 	.signup {

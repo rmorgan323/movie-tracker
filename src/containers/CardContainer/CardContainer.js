@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './CardContainer.css';
 import Card from '../../components/Card/Card';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-export const CardContainer = props => {
-  const cards = props.movies.map(card => {
+class CardContainer extends Component  {
+  constructor() {
+    super();
+    this.state = {
+      users: {
+        name: ''
+      }
+    }
+  }
+ 
+ componentWillReceiveProps(nextProps) {
+  this.setState({users: this.state.uswer})
+ }
+ render() {
+  
+  const cards = this.props.movies.map(card => {
     return (
       <Card
         key={card.movieId}
@@ -19,14 +33,19 @@ export const CardContainer = props => {
         favorite={card.favorite}
       />
     );
-  });
+    })
+
 
   return <div className="card-container">{cards}</div>;
+    };
 };
+
+
 
 export const mapStateToProps = store => {
   return {
-    movies: store.movies
+    movies: store.movies,
+    user: store.user
   };
 };
 
