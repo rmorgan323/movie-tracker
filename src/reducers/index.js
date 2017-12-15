@@ -7,7 +7,6 @@ const rootReducer = combineReducers ({
   movies: makeMoviesReducer,
   user: userReducers
 
-
 });
 
 export default rootReducer;
