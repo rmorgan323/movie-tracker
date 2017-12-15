@@ -8,9 +8,6 @@
   margin-bottom: 10px; }
   .header h1 {
     color: #fff; }
-  .header .header {
-    display: flex;
-    flex-direction: row; }
   .header .login, .header .signup {
     position: absolute;
     right: 20px; }

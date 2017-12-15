@@ -17,3 +17,12 @@
     background: gray;
     color: white;
   }
+
+  @media screen and (max-width: 435px) {
+    form input {
+      width: 90%;
+    }
+    form button {
+      width: 90%;
+    }
+  }
