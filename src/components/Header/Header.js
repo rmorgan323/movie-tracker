@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { userLogout } from '../../actions';
 import { getMovies } from '../../actions';
+import determineUser from '../../helper/determineUser/determineUser';
 
 class Header extends Component {
 	componentDidMount = () => {
@@ -30,8 +31,8 @@ class Header extends Component {
 	}
 
 	render() {
-		var headerLinks = determainUser(this.props.user)  ? this.noUserRender() 
-																											: this.userRender()
+		var headerLinks = determineUser(this.props.user)  ? this.userRender() 
+																											: this.noUserRender()
 		return (
 			<div className="header">
 				<h1>Movie Tracker</h1>
