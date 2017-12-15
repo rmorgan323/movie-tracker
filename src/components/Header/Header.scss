@@ -6,10 +6,12 @@
 	justify-content: center;
 	position: relative;
 	margin-bottom: 10px;
+	
 
 	h1 {
 		color: #fff;
 	}
+
 
 	.login, .signup {
 		position: absolute;
@@ -17,7 +19,7 @@
 	}
 
 	.login {
-		top: 20px;
+		top: 20px;		
 	}
 
 	.signup {

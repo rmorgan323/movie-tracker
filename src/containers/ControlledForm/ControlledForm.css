@@ -1,0 +1,22 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+form input {
+  width: 50%;
+  margin-top: 15px;
+  height: 40px; }
+
+form button {
+  width: 50%;
+  margin-top: 15px;
+  height: 40px;
+  background: gray;
+  color: white; }
+
+@media screen and (max-width: 435px) {
+  form input {
+    width: 90%; }
+  form button {
+    width: 90%; } }
