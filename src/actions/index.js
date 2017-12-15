@@ -13,8 +13,6 @@ export const getMovies = () => async (dispatch) => {
 	dispatch(makeMovieArray(newMovies));
 }
 
-//////
-
 export const newUser = (user) => ({
 	type: 'ADD_NEW_USER',
 	user
@@ -33,26 +31,22 @@ export const fetchUsers = (user) => async (dispatch) => {
 	} else {
 		dispatch(signupFailure('error-signup'))
 	}
-
 }
-
-// export const checkUsers = (response) => ({
-// 	type: 'CHECK_USERS',
-// 	response
-// })
 
 export const signupFailure = (msg) => ({
 	type: 'SIGNUP_ERROR',
 	msg
 })
 
-
 export const checkForUser = (user) => async (dispatch) => {
 	const response = await checkUser(user);
-	console.log('response', response)
 	if(response.status === 'success'){
 		dispatch(setUser(response.data))
 	} else {
 		dispatch(signupFailure('error-login'))
 	}
 }
+
+export const userLogout = () => ({
+	type: 'USER_LOGOUT',
+})

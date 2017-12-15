@@ -4,7 +4,6 @@ import * as actions from '../../actions';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-
 class ControlledForm extends Component {
     constructor() {
         super();
@@ -25,22 +24,15 @@ class ControlledForm extends Component {
         this.setState({
             users:{...this.state.users, [property]: value}
         })
-
     }
-
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.user === 'error-signup') {
-             console.log('signup error')
             this.setState({errorMessage: 'User email is being used. Please use a new email or login if you already have an account'})
         } else if (nextProps.user === 'error-login') {
-          console.log('login error')
            this.setState({errorMessage: 'email and password do not match please try again or create an account'})
-
-        } 
-        else if (nextProps.user.signedIn === true) {
+        } else if (nextProps.user.signedIn === true) {
             this.props.history.push('/')
-            //and display some crap
         }
     }
 
@@ -48,16 +40,10 @@ class ControlledForm extends Component {
         e.preventDefault();
         const endPoint = this.props.location.pathname
 
-
-
         if (endPoint === '/login') {
-            // const callback = await userSignIn(this.state)
-            // callback.status === 200 ? this.props.history.push('/') : console.log('User does not match')
-        const userGet = await this.props.checkUsers(this.state.users);
-
+            await this.props.checkUsers(this.state.users);
         } else if (endPoint === '/signup') {
-        const userCheck = await this.props.getUsers(this.state.users);
-
+            await this.props.getUsers(this.state.users);
         }
     }
 
@@ -95,7 +81,6 @@ class ControlledForm extends Component {
             </div>
         )
     }
-
 }
 
 const mapStateToProps = (store) => {
@@ -116,5 +101,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ControlledForm))
-
-// export default ControlledForm;

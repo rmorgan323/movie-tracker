@@ -22,7 +22,5 @@ const router = (
     </Provider>
 )
 
-
-
 ReactDOM.render(router, document.getElementById('root'));
 registerServiceWorker();

@@ -1,19 +1,6 @@
 const userReducers = (store = {}, action) => {
     switch(action.type) {
-        case 'CHECK_USERS':
-            return (Object.assign({},
-                {
-                    signedIn: false,
-                    userInfo: {
-                        id: '',
-                        name: '',
-                        password: '',
-                        email: '',
-                        favorites: []
-                    }
-                }
-            ));
-
+        
         case 'SET_USER':
             return (Object.assign({},
                 {
@@ -30,6 +17,9 @@ const userReducers = (store = {}, action) => {
 
         case 'SIGNUP_ERROR':
             return action.msg
+
+        case 'USER_LOGOUT':
+            return {}
 
         default:
             return store
