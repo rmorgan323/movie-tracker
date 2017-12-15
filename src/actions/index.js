@@ -25,10 +25,11 @@ export const setUser = user => ({
 });
 
 export const fetchUsers = user => async dispatch => {
-  const response = await addNewUser(user);
+	const response = await addNewUser(user);
   if (response.status === 'success') {
     const user = await getUser(response.id);
-    dispatch(setUser(user));
+		dispatch(setUser(user));
+		//dispactch(getFavorites(user.id))
   } else {
     dispatch(signupFailure('error-signup'));
   }
@@ -40,7 +41,7 @@ export const signupFailure = msg => ({
 });
 
 export const checkForUser = user => async dispatch => {
-  const response = await checkUser(user);
+	const response = await checkUser(user);
   if (response.status === 'success') {
     dispatch(setUser(response.data));
   } else {
@@ -52,12 +53,12 @@ export const userLogout = () => ({
   type: 'USER_LOGOUT'
 });
 
-export const getFavorites = (userId, movieId, movieObj) => async dispatch => {
-  const response = await getFavorites(userId);
+// export const getFavorites = (userId, movieId, movieObj) => async dispatch => {
+//   const response = await getFavorites(userId);
 
-  if (response.status === 'success') {
-    response.data.find(favorite => favorite.id === movieId)
-      ? deleteFavorite(userId, movieId)
-      : addFavorite(movieObj);
-  }
-};
+//   if (response.status === 'success') {
+//     response.data.find(favorite => favorite.id === movieId)
+//       ? deleteFavorite(userId, movieId)
+//       : addFavorite(movieObj);
+//   }
+// };
