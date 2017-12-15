@@ -7,8 +7,6 @@ export const userSignIn = async (user) => {
                 'Content-Type': 'application/json'
             }
         })
-
-        console.log(fetchUser)
         return fetchUser;
 
     } catch (e) {

@@ -8,6 +8,7 @@ const userReducers = (store = {}, action) => {
                         id: '',
                         name: '',
                         password: '',
+                        email: '',
                         favorites: []
                     }
                 }
@@ -21,6 +22,7 @@ const userReducers = (store = {}, action) => {
                         id: action.user.id,
                         name: action.user.name,
                         password: action.user.password,
+                        email: action.user.email,
                         favorites: []
                     }
                 }

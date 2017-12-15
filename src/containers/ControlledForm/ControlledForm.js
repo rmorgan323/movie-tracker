@@ -37,11 +37,16 @@ class ControlledForm extends Component {
         e.preventDefault();
         const endPoint = this.props.location.pathname
 
-        const userCheck = await this.props.getUsers(this.state);
+
 
         if (endPoint === '/login') {
-            const callback = await userSignIn(this.state)
-            callback.status === 200 ? this.props.history.push('/') : console.log('User does not match')
+            // const callback = await userSignIn(this.state)
+            // callback.status === 200 ? this.props.history.push('/') : console.log('User does not match')
+        const userGet = await this.props.checkUsers(this.state);
+        
+        } else if (endPoint === '/signup') {
+        const userCheck = await this.props.getUsers(this.state);
+
         }
     }
 
@@ -89,6 +94,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getUsers: (user) => {
       dispatch(actions.fetchUsers(user))
+    },
+    checkUsers: (user) => {
+      dispatch(actions.checkForUser(user))
     }
   }
 }

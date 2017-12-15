@@ -1,6 +1,7 @@
 import { getRecentMovies } from '../helper/apiCalls';
 import { addNewUser } from '../helper/addNewUser/addNewUser';
 import getUser from '../helper/getUser.js'
+import { checkUser } from '../helper/checkUser.js'
 
 export const makeMovieArray = (movies) => ({
   type: 'MAKE_MOVIE_ARRAY',
@@ -45,3 +46,13 @@ export const signupFailure = (msg) => ({
 	msg
 })
 
+
+export const checkForUser = (user) => async (dispatch) => {
+	const response = await checkUser(user);
+	console.log('response', response)
+	if(response.status === 'success'){
+		dispatch(setUser(response.data))
+	} else {
+		dispatch(signupFailure('error'))
+	}
+}
