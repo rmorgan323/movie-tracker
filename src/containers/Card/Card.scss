@@ -1,23 +1,81 @@
 .card {
 	width: 300px;
-	background-color: lightgrey;
-	padding: 10px;
+	background-color: rgba(60,60,60, 0);
 	margin: 10px;
+	height: 450px;
+	cursor: pointer;
+	position: relative;
+	color: rgba(255,255,255, 0);
+	transition: background-color .3s ease-in-out;
+	transition: color .1s ease-in-out;
 
 	img {
-		width: 280px;
+		width: 300px;
+		opacity: 1 !important;
+		position: absolute;
+		z-index: -1;
 	}
 
 	h2 {
 		text-align: center;
+		margin: 14px 12px 10px;
+		font-weight: 300;
 	}
 
-	h2, h4 {
-		margin: 8px 0;
+	h4 {
+		line-height: 1.3;
+		margin: 8px 12px;
+		font-family: 'Sanchez', serif;
 	}
 
 	.overview {
-		height: 91px;
+		height: 300px;
 		overflow: scroll;
 	}
+
+	button {
+		background: none;
+		border: none;
+		cursor: pointer;
+		position: absolute;
+		bottom: 5px;
+		right: 5px;
+		outline: none;
+	}
+
+	.star-outline {
+		background-image: url('star-outline.svg');
+		background-repeat: no-repeat;
+		height: 70px;
+		opacity: .7;
+		width: 70px;
+	}
+
+	.star-outline:hover {
+		background: none;
+		background-image: url('star-outline-red.svg');
+		background-repeat: no-repeat;
+		opacity: 1;
+	}
+
+	.star-solid {
+		background-image: url('star-solid.svg');
+		background-repeat: no-repeat;
+		height: 70px;
+		width: 70px;
+		opacity: 1;
+	}
 }
+
+.card:hover {
+	background-color: rgba(60,60,60, .88);
+	color: rgba(255,255,255, .82);
+	transition: background-color 1s ease-in-out;
+	transition: color 1s ease-in-out;
+}
+
+.card-favorited {
+	background-color: red;
+}
+
+
