@@ -3,15 +3,13 @@ import Header from '../../components/Header/Header';
 import Routes from '../Routes/Routes';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <Routes />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="App">
+      <Header />
+      <Routes />
+    </div>
+  );
+};
 
 export default App;
