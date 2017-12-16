@@ -49,11 +49,21 @@ class ControlledForm extends Component {
         }
     }
 
+    navRedirect = (e, category) => {
+      console.log(category)
+      e.preventDefault();
+      this.props.history.push(`${category}`);
+    }
+
     render() {
         let endPoint = this.props.location.pathname
-
         return (
             <div>
+            <button 
+              onClick={(event) => this.navRedirect(event, 'login')}
+              className = 'login-button'> Login </button>
+            <button
+              onClick = {(event) => this.navRedirect(event, 'signup') }> Sign-up </button>
                 <form onSubmit={this.handleSubmit}>
                     {endPoint === '/signup' && 
                     <input className='name' 
