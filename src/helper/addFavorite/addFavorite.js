@@ -1,5 +1,6 @@
-const addFavorites = async ({ id, image, userId, title, releaseDate, voteAverage, overview }) => {
-  const fetchFavorites = await fetch(
+const plusFavorite = async ({ id, image, userId, title, releaseDate, voteAverage, overview }) => {
+  console.log(id, userId, title)
+  const fetchFavorite = await fetch(
     'http://localhost:3000/api/users/favorites/new', {
       method: 'POST',
       body: JSON.stringify({
@@ -8,7 +9,7 @@ const addFavorites = async ({ id, image, userId, title, releaseDate, voteAverage
         title: title,
         poster_path: image,
         release_date: releaseDate,
-        vote_avergae: voteAverage,
+        vote_average: voteAverage,
         overview: overview
       }),
       headers: {
@@ -16,9 +17,9 @@ const addFavorites = async ({ id, image, userId, title, releaseDate, voteAverage
     }
     }
   );
-  const jsonFavorites = await fetchFavorites.json();
+  // const jsonFavorite = await fetchFavorite.json();
 
-  return jsonFavorites;
+  console.log(fetchFavorite)
 };
 
-export default getFavorites;
+export default plusFavorite;
