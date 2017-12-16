@@ -35,16 +35,11 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     deleteFavorite: (movieBundle) => {
-      dispatch(actions.deleteFavorite(movieBundle));
+      dispatch(actions.deletePost(movieBundle));
     },
     addFavorite: (movieBundle) => {
-      dispatch(actions.addFavorite(movieBundle));
+      dispatch(actions.addPost(movieBundle));
     }
-
-
-    // toggleFavorite: (props, movieBundle) => {
-    //   dispatch(actions.addFavorite(props, movieBundle));
-    // }
   };
 };
 

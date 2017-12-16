@@ -2,7 +2,9 @@ import { getRecentMovies } from '../helper/apiCalls';
 import { addNewUser } from '../helper/addNewUser/addNewUser';
 import getUser from '../helper/getUser.js';
 import { checkUser } from '../helper/checkUser.js';
-import getFavorites from '../helper/getFavorites/getFavorites';
+import getFavesOnLogin from '../helper/getFavorites/getFavorites';
+import plusFavorite from '../helper/addFavorite/addFavorite';
+import removeFavorite from '../helper/deleteFavorite/deleteFavorite';
 
 export const makeMovieArray = movies => ({
   type: 'MAKE_MOVIE_ARRAY',
@@ -53,29 +55,34 @@ export const userLogout = () => ({
   type: 'USER_LOGOUT'
 });
 
-export const toggleFavorite = (props, movieBundle) => async dispatch => ({
-	
-	// props.user.userInfo.favorites.find(favorite => favorite.id === movieBundle.id) ? dispatch(deleteFavorite(movieBundle)) : dispatch(addFavorite(movieBundle))
-	// dispatch(addFavorite(movieBundle))
-})
+export const deletePost = (movie) => async dispatch => {
+	const response = await removeFavorite(movie.id, movie.userId)
+	dispatch(deleteFavorite(movie));
+}
 
 export const deleteFavorite = (movie) => ({
 	type: 'DELETE_FAVORITE',
 	movie
 })
 
+export const addPost = (movie) => async dispatch => {
+	const response = await plusFavorite(movie)
+	dispatch(addFavorite(movie))
+}
+
 export const addFavorite = (movie) => ({
 	type: 'ADD_FAVORITE',
 	movie
 })
 
+export const getUserFavorites = (id) => async dispatch => {
+	const response = await getFavesOnLogin(id)
+	// console.log(response.data)
+	dispatch(getFaves(response.data))
+}
 
-// export const getFavorites = (userId, movieId, movieObj) => async dispatch => {
-//   const response = await getFavorites(userId);
+export const getFaves = (favorites) => ({
+	type: 'GET_FAVORITES',
+	favorites
+})
 
-//   if (response.status === 'success') {
-//     response.data.find(favorite => favorite.id === movieId)
-//       ? deleteFavorite(userId, movieId)
-//       : addFavorite(movieObj);
-//   }
-// };

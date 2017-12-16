@@ -38,6 +38,15 @@ const userReducers = (store = {}, action) => {
                     store.userInfo, 
                     {favorites: [...store.userInfo.favorites, action.movie] })})
 
+        case 'GET_FAVORITES':
+            return Object.assign(
+                {}, 
+                store, 
+                {userInfo: Object.assign(
+                    {}, 
+                    store.userInfo, 
+                    {favorites: action.favorites})})
+
         default:
             return store
     }
