@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import './Header.css';
+import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import { userLogout } from '../../actions';
 import { getMovies } from '../../actions';
 import determineUser from '../../helper/determineUser/determineUser';
+import './Header.css';
 
 class Header extends Component {
 	componentDidMount = () => {
@@ -31,7 +30,7 @@ class Header extends Component {
 	}
 
 	render() {
-		var headerLinks = determineUser(this.props.user)  ? this.userRender() 
+		var headerLinks = determineUser(this.props.user)  ? this.userRender()
 																											: this.noUserRender()
 		return (
 			<div className="header">

@@ -1,18 +1,21 @@
 import React from 'react';
-import './Card.css';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/';
+import './Card.css';
 
 const Card = (props) => {
 	const { id, image, userId, title, releaseDate, voteAverage, overview, favorite } = props;
   const movieBundle = { id, image, userId, title, releaseDate, voteAverage, overview }
 
   const handleFavorites = (props, movieBundle) => {
-    props.user.userInfo.favorites.find(favorite => favorite.id === movieBundle.id) ? props.deleteFavorite(movieBundle) : props.addFavorite(movieBundle)
+    props.user.userInfo.favorites.find(favorite => favorite.id === movieBundle.id) ? props.deleteFavorite(movieBundle)
+                                                                                   : props.addFavorite(movieBundle)
   }
+
 
   return (  
       <div className="card">
+
       <div>
         <img src={image} alt={title} />
       </div>

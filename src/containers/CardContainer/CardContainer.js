@@ -1,6 +1,6 @@
 import React from 'react';
 import './CardContainer.css';
-import Card from '../../components/Card/Card';
+import Card from '../Card/Card';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 

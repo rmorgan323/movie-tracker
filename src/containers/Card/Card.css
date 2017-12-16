@@ -39,6 +39,9 @@
     opacity: .7;
     width: 70px; }
   .card .star-outline:hover {
+    background: none;
+    background-image: url("star-outline-red.svg");
+    background-repeat: no-repeat;
     opacity: 1; }
   .card .star-solid {
     background-image: url("star-solid.svg");

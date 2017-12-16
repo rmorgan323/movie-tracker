@@ -52,6 +52,9 @@
 	}
 
 	.star-outline:hover {
+		background: none;
+		background-image: url('star-outline-red.svg');
+		background-repeat: no-repeat;
 		opacity: 1;
 	}
 
