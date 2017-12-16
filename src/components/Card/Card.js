@@ -40,11 +40,6 @@ export const mapDispatchToProps = dispatch => {
     addFavorite: (movieBundle) => {
       dispatch(actions.addPost(movieBundle));
     }
-
-
-    // toggleFavorite: (props, movieBundle) => {
-    //   dispatch(actions.addFavorite(props, movieBundle));
-    // }
   };
 };
 
