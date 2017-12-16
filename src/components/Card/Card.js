@@ -3,9 +3,8 @@ import './Card.css';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/';
 
-
 const Card = (props) => {
-	const { id, image, userId, title, releaseDate, voteAverage, overview } = props;
+	const { id, image, userId, title, releaseDate, voteAverage, overview, favorite } = props;
   const movieBundle = { id, image, userId, title, releaseDate, voteAverage, overview }
 
   const handleFavorites = (props, movieBundle) => {
@@ -13,7 +12,7 @@ const Card = (props) => {
   }
 
   return (  
-    <div className="card">
+      <div className="card">
       <div>
         <img src={image} alt={title} />
       </div>
@@ -21,7 +20,9 @@ const Card = (props) => {
       <h4>Released: {releaseDate}</h4>
       <h4>Average Review: {voteAverage}</h4>
       <h4 className="overview">Overview: {overview}</h4>
-      <button onClick={() => handleFavorites(props, movieBundle)}> Favorite </button>
+      <button onClick={() => handleFavorites(props, movieBundle)}
+              className={ favorite === false ? 'star-outline' : 'star-solid' }
+      ></button>
     </div>
   );
 };

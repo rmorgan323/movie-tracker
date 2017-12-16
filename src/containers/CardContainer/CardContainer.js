@@ -35,7 +35,7 @@ export const CardContainer = props => {
 export const mapStateToProps = store => {
   return {
     movies: store.movies,
-    user: store.user
+    user: store.user,
   };
 };
 
