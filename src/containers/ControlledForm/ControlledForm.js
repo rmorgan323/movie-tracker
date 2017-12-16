@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { userSignIn } from '../../helper/userSignIn/userSignIn';
 import * as actions from '../../actions';
-import { withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import './ControlledForm.css'
 
 class ControlledForm extends Component {
     constructor() {
@@ -28,9 +29,9 @@ class ControlledForm extends Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.user === 'error-signup') {
-            this.setState({errorMessage: 'User email is being used. Please use a new email or login if you already have an account'})
+            this.setState({errorMessage: 'User email is being used. Use another email or login with email'})
         } else if (nextProps.user === 'error-login') {
-           this.setState({errorMessage: 'email and password do not match please try again or create an account'})
+           this.setState({errorMessage: 'Email and password do not match. Try again or create an account'})
         } else if (nextProps.user.signedIn === true) {
             this.props.history.push('/')
             this.props.getUserFavorites(nextProps.user.userInfo.id)
@@ -48,11 +49,26 @@ class ControlledForm extends Component {
         }
     }
 
+    navRedirect = (e, category) => {
+      console.log(category)
+      e.preventDefault();
+      this.props.history.push(`${category}`);
+      this.setState({formName: category})
+        console.log(this.state.formName)
+      
+    }
+
+
     render() {
         let endPoint = this.props.location.pathname
-
         return (
-            <div>
+            <div className = 'form-component'>
+            <div className = "form-button-container">
+            <div className = "login-buttons">
+            <NavLink className="login-button form-button" to='/login'>Login</NavLink>
+            <NavLink className="login-button form-button" to='/signup'>Sign-up</NavLink>
+
+             </div>   
                 <form onSubmit={this.handleSubmit}>
                     {endPoint === '/signup' && 
                     <input className='name' 
@@ -73,12 +89,14 @@ class ControlledForm extends Component {
                            onChange={this.handleInputChange} 
                            value={this.state.users.password}/>
 
-                    <button type='submit' 
+                    <button type='submit'
+                            className = "submit-button" 
                             onClick={this.handleSubmit} >Submit</button>
                 </form>
                 <div className = "error-message">
                   {this.state.errorMessage}
                 </div>
+            </div>
             </div>
         )
     }

@@ -14,8 +14,8 @@ class Header extends Component {
 	noUserRender = () => {
 		return (
 			<div>
-	      <NavLink className="login" to='/login'>Login</NavLink>
-	      <NavLink className="signup" to='/signup'>Sign-up</NavLink>
+	      <NavLink className="login nav-link" to='/login'>Login</NavLink>
+	      <NavLink className="signup nav-link" to='/signup'>Sign-up</NavLink>
 			</div>
 		)
 	}
@@ -23,8 +23,8 @@ class Header extends Component {
 	userRender = () => {
 		return (
 			<div>
-					<div className="login">Welcome, {this.props.user.userInfo.name}</div>
-					<NavLink className="signup" to='/' onClick={this.props.logoutUser} >Sign-Out</NavLink>
+					<div className="login login-message">Welcome, {this.props.user.userInfo.name}</div>
+					<NavLink className="signup nav-link" to='/' onClick={this.props.logoutUser} >Sign-Out</NavLink>
 				</div>
 		)
 	}
