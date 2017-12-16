@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { userSignIn } from '../../helper/userSignIn/userSignIn';
 import * as actions from '../../actions';
-import { withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './ControlledForm.css'
 
@@ -53,20 +53,31 @@ class ControlledForm extends Component {
       console.log(category)
       e.preventDefault();
       this.props.history.push(`${category}`);
+      this.setState({formName: category})
+        console.log(this.state.formName)
+      
     }
+
+            // <Link to="/login" activeClassName = "form-nav-buttons">Login</Link>
+            // <Link to="/signup" activeClassName = "form-nav-buttons">Signup</Link>
+             
+            //       <button 
+            //   onClick={(event) => this.navRedirect(event, 'login')}
+            //   className = 'login-button redirect-button'> Login </button>
+            // <button
+            //   onClick = {(event) => this.navRedirect(event, 'signup')}
+            //   className = 'signup-button redirect-button'> Sign-up </button>
+
 
     render() {
         let endPoint = this.props.location.pathname
         return (
-            <div>
+            <div className = 'form-component'>
+            <div className = "form-button-container">
             <div className = "login-buttons">
-            <button 
-              onClick={(event) => this.navRedirect(event, 'login')}
-              className = 'login-button redirect-button'> Login </button>
-            <button
-              onClick = {(event) => this.navRedirect(event, 'signup')}
-              className = 'signup-button redirect-button'> Sign-up </button>
-             
+            <NavLink className="login-button form-button" to='/login'>Login</NavLink>
+            <NavLink className="login-button form-button" to='/signup'>Sign-up</NavLink>
+
              </div>   
                 <form onSubmit={this.handleSubmit}>
                     {endPoint === '/signup' && 
@@ -95,6 +106,7 @@ class ControlledForm extends Component {
                 <div className = "error-message">
                   {this.state.errorMessage}
                 </div>
+            </div>
             </div>
         )
     }
