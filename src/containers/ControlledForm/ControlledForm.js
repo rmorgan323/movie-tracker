@@ -29,9 +29,9 @@ class ControlledForm extends Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.user === 'error-signup') {
-            this.setState({errorMessage: 'User email is being used. Please use a new email or login if you already have an account'})
+            this.setState({errorMessage: 'User email is being used. Use another email or login with email'})
         } else if (nextProps.user === 'error-login') {
-           this.setState({errorMessage: 'email and password do not match please try again or create an account'})
+           this.setState({errorMessage: 'Email and password do not match. Try again or create an account'})
         } else if (nextProps.user.signedIn === true) {
             this.props.history.push('/')
             this.props.getUserFavorites(nextProps.user.userInfo.id)
@@ -57,16 +57,6 @@ class ControlledForm extends Component {
         console.log(this.state.formName)
       
     }
-
-            // <Link to="/login" activeClassName = "form-nav-buttons">Login</Link>
-            // <Link to="/signup" activeClassName = "form-nav-buttons">Signup</Link>
-             
-            //       <button 
-            //   onClick={(event) => this.navRedirect(event, 'login')}
-            //   className = 'login-button redirect-button'> Login </button>
-            // <button
-            //   onClick = {(event) => this.navRedirect(event, 'signup')}
-            //   className = 'signup-button redirect-button'> Sign-up </button>
 
 
     render() {

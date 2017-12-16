@@ -71,6 +71,10 @@ input {
   background-color: #1fffff;
 }
 
+.error-message {
+  color: white;
+  margin-top: 15px; 
+}
 
 @media screen and (max-width: 900px) {
   .form-button-container {
