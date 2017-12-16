@@ -31,7 +31,7 @@ class Header extends Component {
 	}
 
 	render() {
-		var headerLinks = determineUser(this.props.user)  ? this.userRender() 
+		var headerLinks = determineUser(this.props.user)  ? this.userRender()
 																											: this.noUserRender()
 		return (
 			<div className="header">
