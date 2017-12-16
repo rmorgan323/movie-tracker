@@ -1,3 +1,6 @@
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+
 const Routes = () => {
   return (
     <div>
@@ -7,3 +10,5 @@ const Routes = () => {
     </div>
   );
 };
+
+export default Routes;
