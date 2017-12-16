@@ -8,10 +8,31 @@ input {
   width: 40%;
   margin-top: 15px;
   height: 40px;
+  font-size: 20px;
 }
 
 .submit-button {
   height: 40px;
-  width: 100px;
+  width: 35%;
   margin-top: 15px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  input {
+    width: 50%;
+  }
+  .submit-button {
+    width: 45%
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  input {
+    width: 80%;
+  }
+  .submit-button{
+    width: 75%
+  }
 }
