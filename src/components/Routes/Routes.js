@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import ControlledForm from '../ControlledForm/ControlledForm';
-import CardContainer from '../CardContainer/CardContainer';
+import ControlledForm from '../../containers/ControlledForm/ControlledForm';
+import CardContainer from '../../containers/CardContainer/CardContainer';
 
 const Routes = () => {
   return (
