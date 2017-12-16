@@ -53,6 +53,23 @@ export const userLogout = () => ({
   type: 'USER_LOGOUT'
 });
 
+export const toggleFavorite = (props, movieBundle) => async dispatch => ({
+	
+	// props.user.userInfo.favorites.find(favorite => favorite.id === movieBundle.id) ? dispatch(deleteFavorite(movieBundle)) : dispatch(addFavorite(movieBundle))
+	// dispatch(addFavorite(movieBundle))
+})
+
+export const deleteFavorite = (movie) => ({
+	type: 'DELETE_FAVORITE',
+	movie
+})
+
+export const addFavorite = (movie) => ({
+	type: 'ADD_FAVORITE',
+	movie
+})
+
+
 // export const getFavorites = (userId, movieId, movieObj) => async dispatch => {
 //   const response = await getFavorites(userId);
 
