@@ -4,12 +4,16 @@ import * as actions from '../../actions/';
 import './Card.css';
 
 const Card = (props) => {
-	const { id, image, userId, title, releaseDate, voteAverage, overview, favorite } = props;
-  const movieBundle = { id, image, userId, title, releaseDate, voteAverage, overview }
+	const { movieId, image, userId, title, releaseDate, voteAverage, overview } = props;
+  const movieBundle = { movieId, image, userId, title, releaseDate, voteAverage, overview };
+  const favorite = props.user.userInfo.favorites.find(favorite => favorite.title === movieBundle.title) ? true : false;
 
-  const handleFavorites = (props, movieBundle) => {
-    props.user.userInfo.favorites.find(favorite => favorite.id === movieBundle.id) ? props.deleteFavorite(movieBundle)
-                                                                                   : props.addFavorite(movieBundle)
+  const handleFavorites = ( props, movieBundle ) => {
+    if (props.user.userInfo.favorites.find(favorite => favorite.title === movieBundle.title)) {
+      props.deleteFavorite(movieBundle)
+    } else {
+      props.addFavorite(movieBundle);
+    }
   }
 
 
@@ -24,7 +28,7 @@ const Card = (props) => {
       <h4>Average Review: {voteAverage}</h4>
       <h4 className="overview">Overview: {overview}</h4>
       <button onClick={() => handleFavorites(props, movieBundle)}
-              className={ favorite === false ? 'star-outline' : 'star-solid' }
+              className={ favorite ? 'star-solid' : 'star-outline' }
       ></button>
     </div>
   );

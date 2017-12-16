@@ -56,7 +56,7 @@ export const userLogout = () => ({
 });
 
 export const deletePost = (movie) => async dispatch => {
-	const response = await removeFavorite(movie.id, movie.userId)
+	const response = await removeFavorite(movie.userId, movie.movieId)
 	dispatch(deleteFavorite(movie));
 }
 
@@ -75,9 +75,8 @@ export const addFavorite = (movie) => ({
 	movie
 })
 
-export const getUserFavorites = (id) => async dispatch => {
-	const response = await getFavesOnLogin(id)
-	// console.log(response.data)
+export const getUserFavorites = (userId) => async dispatch => {
+	const response = await getFavesOnLogin(userId)
 	dispatch(getFaves(response.data))
 }
 

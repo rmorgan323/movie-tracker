@@ -8,7 +8,6 @@ export const cleanRecentData = (moviesObj) => {
 			releaseDate: cleanDate(movie.release_date),
 			voteAverage: movie.vote_average,
 			overview: movie.overview,
-			favorite: false
 		})
 		return sortMovies(cleanArray)
 	}, [])
