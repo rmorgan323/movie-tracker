@@ -74,7 +74,8 @@ class ControlledForm extends Component {
                            onChange={this.handleInputChange} 
                            value={this.state.users.password}/>
 
-                    <button type='submit' 
+                    <button type='submit'
+                            className = "submit-button" 
                             onClick={this.handleSubmit} >Submit</button>
                 </form>
                 <div className = "error-message">
