@@ -10,7 +10,7 @@ export const cleanRecentData = (moviesObj) => {
 			overview: movie.overview,
 			favorite: false
 		})
-		return cleanArray
+		return sortMovies(cleanArray)
 	}, [])
 
 	return cleanData
@@ -18,7 +18,16 @@ export const cleanRecentData = (moviesObj) => {
 
 const cleanDate = (date) => {
 	const dateArray = date.split('-');
-	const newDate = [dateArray[1], dateArray[2], dateArray[0]]
+	const newDate = [dateArray[1], dateArray[2], dateArray[0]];
 
 	return newDate.join('/')
+}
+
+const sortMovies = (array) => {
+  return array.sort( (a, b) => {
+    const aDate = a.releaseDate.split('/').splice(0, 2).join('');
+    const bDate = b.releaseDate.split('/').splice(0, 2).join('');
+
+    return bDate - aDate
+  });
 }
