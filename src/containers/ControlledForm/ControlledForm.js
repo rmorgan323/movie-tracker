@@ -59,11 +59,15 @@ class ControlledForm extends Component {
         let endPoint = this.props.location.pathname
         return (
             <div>
+            <div className = "login-buttons">
             <button 
               onClick={(event) => this.navRedirect(event, 'login')}
-              className = 'login-button'> Login </button>
+              className = 'login-button redirect-button'> Login </button>
             <button
-              onClick = {(event) => this.navRedirect(event, 'signup') }> Sign-up </button>
+              onClick = {(event) => this.navRedirect(event, 'signup')}
+              className = 'signup-button redirect-button'> Sign-up </button>
+             
+             </div>   
                 <form onSubmit={this.handleSubmit}>
                     {endPoint === '/signup' && 
                     <input className='name' 
