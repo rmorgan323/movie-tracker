@@ -23,7 +23,25 @@
 	.signup {
 		top: 40px;
 	}
+
+	.nav-link {
+		text-decoration: none;
+		color: white;
+		text-transform: uppercase;
+	}
+
+	.nav-link:hover{
+		color: #1fffff;
+	}
+
+	.login-message {
+		color: #1fffff;
+	}
+
+
 }
+
+
 
 @media screen and (max-width: 400px) {
 	.header {
