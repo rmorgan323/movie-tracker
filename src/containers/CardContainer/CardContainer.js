@@ -6,25 +6,24 @@ import { withRouter } from 'react-router-dom';
 
 export const CardContainer = props => {
   let userId;
-
   if (Object.keys(props.user).length !== 0) {
     userId = props.user.userInfo.id;
   } else {
     userId = null;
   }
 
-  const cards = props.movies.map(card => {
+  const cards = props.movies.map((card) => {
+
     return (
       <Card
         key={card.movieId}
         userId={userId}
-        id={card.movieId}
+        movieId={card.movieId}
         title={card.title}
         image={card.image}
         releaseDate={card.releaseDate}
         voteAverage={card.voteAverage}
         overview={card.overview}
-        favorite={card.favorite}
       />
     );
   });

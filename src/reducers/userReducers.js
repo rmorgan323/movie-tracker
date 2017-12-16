@@ -1,4 +1,15 @@
-const userReducers = (store = {}, action) => {
+const defaultStore = {
+                    signedIn: false,
+                    userInfo: {
+                        id: '',
+                        name: '',
+                        password: '',
+                        email: '',
+                        favorites: []
+                    }
+                }
+
+const userReducers = (store = defaultStore, action) => {
     switch(action.type) {
         case 'SET_USER':
             return (Object.assign({},
