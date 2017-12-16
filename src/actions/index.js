@@ -2,7 +2,7 @@ import { getRecentMovies } from '../helper/apiCalls';
 import { addNewUser } from '../helper/addNewUser/addNewUser';
 import getUser from '../helper/getUser.js';
 import { checkUser } from '../helper/checkUser.js';
-import getFavorites from '../helper/getFavorites/getFavorites';
+import getFavesOnLogin from '../helper/getFavorites/getFavorites';
 import plusFavorite from '../helper/addFavorite/addFavorite';
 import removeFavorite from '../helper/deleteFavorite/deleteFavorite';
 
@@ -73,5 +73,16 @@ export const addPost = (movie) => async dispatch => {
 export const addFavorite = (movie) => ({
 	type: 'ADD_FAVORITE',
 	movie
+})
+
+export const getUserFavorites = (id) => async dispatch => {
+	const response = await getFavesOnLogin(id)
+	// console.log(response.data)
+	dispatch(getFaves(response.data))
+}
+
+export const getFaves = (favorites) => ({
+	type: 'GET_FAVORITES',
+	favorites
 })
 

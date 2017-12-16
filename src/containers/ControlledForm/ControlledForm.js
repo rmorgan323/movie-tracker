@@ -33,6 +33,7 @@ class ControlledForm extends Component {
            this.setState({errorMessage: 'email and password do not match please try again or create an account'})
         } else if (nextProps.user.signedIn === true) {
             this.props.history.push('/')
+            this.props.getUserFavorites(nextProps.user.userInfo.id)
         }
     }
 
@@ -96,6 +97,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     checkUsers: (user) => {
       dispatch(actions.checkForUser(user))
+    },
+    getUserFavorites: (id) => {
+      dispatch(actions.getUserFavorites(id))
     }
   }
 }
