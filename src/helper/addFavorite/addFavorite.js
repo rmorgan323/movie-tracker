@@ -1,8 +1,16 @@
-/*eslint-disable */
-const plusFavorite = async ({ movieId, image, userId, title, releaseDate, voteAverage, overview }) => {
-/*eslint-enable */  
+const plusFavorite = async ({
+  movieId,
+  image,
+  userId,
+  title,
+  releaseDate,
+  voteAverage,
+  overview
+}) => {
+  /*eslint-disable camelcase */
   const fetchFavorite = await fetch(
-    'http://localhost:3000/api/users/favorites/new', {
+    'http://localhost:3000/api/users/favorites/new',
+    {
       method: 'POST',
       body: JSON.stringify({
         movie_id: movieId,
@@ -19,6 +27,7 @@ const plusFavorite = async ({ movieId, image, userId, title, releaseDate, voteAv
     }
   );
   let response = await fetchFavorite.json();
+
   return response;
 };
 
