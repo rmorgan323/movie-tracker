@@ -1,4 +1,6 @@
+/*eslint-disable */
 const plusFavorite = async ({ movieId, image, userId, title, releaseDate, voteAverage, overview }) => {
+/*eslint-enable */  
   const fetchFavorite = await fetch(
     'http://localhost:3000/api/users/favorites/new', {
       method: 'POST',
