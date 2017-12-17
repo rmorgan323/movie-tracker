@@ -1,9 +1,8 @@
 import React from 'react';
-import './CardContainer.css';
 import Card from '../Card/Card';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import './CardContainer.css';
 
 export const CardContainer = props => {
   let userId;
@@ -52,7 +51,7 @@ export const mapStateToProps = store => {
   };
 };
 
-export default withRouter(connect(mapStateToProps, null)(CardContainer));
+export default connect(mapStateToProps, null)(CardContainer);
 
 CardContainer.propTypes = {
   location: PropTypes.string,
