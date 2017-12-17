@@ -2,7 +2,7 @@ import { getRecentMovies } from '../helper/getRecentMovies/getRecentMovies';
 import addNewUser from '../helper/addNewUser/addNewUser';
 import getUser from '../helper/getUser/getUser';
 import checkUser from '../helper/checkUser/checkUser';
-import getFavesOnLogin from '../helper/getFavorites/getFavorites';
+import getUserFavorites from '../helper/getUserFavorites/getUserFavorites';
 import postNewFavoriteData from '../helper/postNewFavoriteData/postNewFavoriteData';
 import deleteFavoriteData from '../helper/deleteFavoriteData/deleteFavoriteData';
 
@@ -80,13 +80,13 @@ export const addFavorite = (movie) => ({
   movie
 });
 
-export const getUserFavorites = (userId) => async dispatch => {
-  const response = await getFavesOnLogin(userId);
-  dispatch(getFaves(response.data));
+export const checkUserFavorites = (userId) => async dispatch => {
+  const response = await getUserFavorites(userId);
+  dispatch(setUserFavorites(response.data));
 };
 
-export const getFaves = (favorites) => ({
-  type: 'GET_FAVORITES',
+export const setUserFavorites = (favorites) => ({
+  type: 'SET_USER_FAVORITES',
   favorites
 });
 
