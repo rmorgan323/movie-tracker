@@ -1,4 +1,4 @@
-const getFavesOnLogin = async userId => {
+const getUserFavorites = async userId => {
   const fetchFavorites = await fetch(
     `http://localhost:3000/api/users/${userId}/favorites`
   );
@@ -7,4 +7,4 @@ const getFavesOnLogin = async userId => {
   return jsonFavorites;
 };
 
-export default getFavesOnLogin;
+export default getUserFavorites;
