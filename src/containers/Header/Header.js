@@ -13,7 +13,7 @@ class Header extends Component {
 
 	noUserRender = () => {
 		return (
-			<div>
+			<div className="header-box">
 	      <NavLink className="login nav-link" to='/login'>Login</NavLink>
 	      <NavLink className="signup nav-link" to='/signup'>Sign-up</NavLink>
 			</div>
@@ -22,11 +22,11 @@ class Header extends Component {
 
 	userRender = () => {
 		return (
-			<div>
-					<div className="login login-message">Welcome, {this.props.user.userInfo.name}</div>
-					<NavLink to='/favorites'><button>FAVORITES</button></NavLink>
-					<NavLink className="signup nav-link" to='/' onClick={this.props.logoutUser} >Sign-Out</NavLink>
-				</div>
+			<div className="header-box">
+				<div className="login login-message">Welcome, {this.props.user.userInfo.name}</div>
+				<NavLink to='/favorites'><button>FAVORITES</button></NavLink>
+				<NavLink className="signup nav-link" to='/' onClick={this.props.logoutUser} >Sign-Out</NavLink>
+			</div>
 		)
 	}
 
@@ -36,7 +36,7 @@ class Header extends Component {
 		return (
 			<div className="header">
 				<NavLink to='/' >
-					<h1>Movie Tracker</h1>
+					<h1><span>MOVIE</span>TRACKER</h1>
 				</NavLink>
 				{headerLinks}
 			</div>

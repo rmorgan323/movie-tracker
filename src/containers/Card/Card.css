@@ -6,7 +6,7 @@
   cursor: pointer;
   position: relative;
   color: rgba(255, 255, 255, 0);
-  transition: background-color .3s ease-in-out;
+  transition: background-color 4s ease-in-out;
   transition: color .1s ease-in-out; }
   .card img {
     width: 300px;
@@ -56,5 +56,6 @@
   transition: background-color 1s ease-in-out;
   transition: color 1s ease-in-out; }
 
-.card-favorited {
-  background-color: red; }
+::-webkit-scrollbar {
+  background: transparent;
+  width: 0px; }
