@@ -10,7 +10,9 @@ const checkUser = async user => {
   if (fetchUserPost.status >= 400) {
     return fetchUserPost.status;
   }
+
   const jsonResponse = await fetchUserPost.json();
+
   return jsonResponse;
 };
 
