@@ -56,7 +56,10 @@ export const userLogout = () => ({
 
 export const deletePost = (movie) => async dispatch => {
   const response = await removeFavorite(movie.userId, movie.movieId);
-  dispatch(deleteFavorite(movie));
+
+  if (response.status === 'success') {
+    dispatch(deleteFavorite(movie));
+  }
 };
 
 export const deleteFavorite = (movie) => ({
@@ -66,7 +69,10 @@ export const deleteFavorite = (movie) => ({
 
 export const addPost = (movie) => async dispatch => {
   const response = await plusFavorite(movie);
-  dispatch(addFavorite(movie));
+
+  if (response.status === 'success') {
+    dispatch(addFavorite(movie));
+  }
 };
 
 export const addFavorite = (movie) => ({
