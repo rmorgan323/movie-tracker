@@ -1,8 +1,7 @@
 import addNewUser from './addNewUser.js';
 import {
   mockNewUser,
-  newUserApiResponse,
-  newUserError
+  newUserApiResponse
 } from '../../data/mockNewUser.js';
 
 describe('add new user', () => {
