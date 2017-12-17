@@ -17,8 +17,8 @@ const Card = (props) => {
       props.addFavorite(movieBundle);
     }
   };
-  
-  return (  
+
+  return (
     <div className="card">
 
       <div>
