@@ -54,7 +54,7 @@ export const mapStateToProps = store => {
 export default connect(mapStateToProps, null)(CardContainer);
 
 CardContainer.propTypes = {
-  location: PropTypes.string,
+  location: PropTypes.object,
   movies: PropTypes.array,
   user: PropTypes.object
 };
