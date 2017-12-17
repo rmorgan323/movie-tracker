@@ -13,13 +13,13 @@ export const CardContainer = props => {
     userId = null;
   }
 
-  const favoritesArray = props.movies.reduce((newArray, movie) => {
+  const favoritesArray = props.movies.reduce((favoritesArray, movie) => {
     props.user.userInfo.favorites.forEach(favorite => {
       if (favorite.title === movie.title) {
-        newArray.push(movie);
+        favoritesArray.push(movie);
       }
     });
-    return newArray;
+    return favoritesArray;
   }, []);
 
   const endpoint = props.location.pathname;
