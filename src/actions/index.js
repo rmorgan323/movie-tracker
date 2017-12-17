@@ -3,7 +3,7 @@ import { addNewUser } from '../helper/addNewUser/addNewUser';
 import getUser from '../helper/getUser/getUser';
 import checkUser from '../helper/checkUser/checkUser';
 import getFavesOnLogin from '../helper/getFavorites/getFavorites';
-import plusFavorite from '../helper/addFavorite/addFavorite';
+import postNewFavoriteData from '../helper/postNewFavoriteData/postNewFavoriteData';
 import removeFavorite from '../helper/deleteFavorite/deleteFavorite';
 
 export const makeMovieArray = movies => ({
@@ -68,7 +68,7 @@ export const deleteFavorite = (movie) => ({
 });
 
 export const addPost = (movie) => async dispatch => {
-  const response = await plusFavorite(movie);
+  const response = await postNewFavoriteData(movie);
 
   if (response.status === 'success') {
     dispatch(addFavorite(movie));
