@@ -2,7 +2,8 @@ import { CardContainer, mapStateToProps } from './CardContainer';
 import React from 'react';
 import { shallow } from 'enzyme';
 import mockMovie from '../../data/mockMovie';
-import mockUserData from '../../data/mockUser';
+import mockRealUser from '../../data/mockRealUser';
+import mockLocationData from '../../data/mockLocation';
 
 describe('CardContainer tests', () => {
   let mockMovies;
@@ -12,8 +13,8 @@ describe('CardContainer tests', () => {
 
   beforeEach(() => {
     mockMovies = [mockMovie];
-    mockUser = mockUserData;
-    mockLocation = {};
+    mockUser = mockRealUser;
+    mockLocation = mockLocationData;
 
     renderedCardContainer = shallow(
       <CardContainer
@@ -27,18 +28,23 @@ describe('CardContainer tests', () => {
     expect(renderedCardContainer).toMatchSnapshot();
   });
 
-  it('Should display cards from props', () => {
-    expect(renderedCardContainer.find('Card').length).toEqual(1);
-  });
-
   describe('mapStateToProps tests', () => {
     it('Should pull movies from store', () => {
       const mockStore = {
-        movies: []
+        movies: [mockMovie]
       };
       const result = mapStateToProps(mockStore);
 
       expect(result.movies).toEqual(mockStore.movies);
     });
+
+    it('Should pull a user from store', () => {
+      const mockStore = {
+        user: mockUser
+      }
+      const result = mapStateToProps(mockStore);
+
+      expect(result.user).toEqual(mockStore.user);
+    })
   });
 });

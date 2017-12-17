@@ -5,7 +5,14 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
-    location={Object {}}
+    location={
+        Object {
+            "hash": "",
+            "pathname": "",
+            "search": "",
+            "state": undefined,
+          }
+    }
     movies={
         Array [
             Object {
@@ -24,11 +31,22 @@ ShallowWrapper {
         Object {
             "signedIn": true,
             "userInfo": Object {
-              "email": "",
-              "favorites": Array [],
-              "id": "",
-              "name": "",
-              "password": "",
+              "email": "supermanSux@batmanrulez.com",
+              "favorites": Array [
+                Object {
+                  "favorite": false,
+                  "image": "https://image.tmdb.org/t/p/w500/9rtrRGeRnL0JKtu9IMBWsmlmmZz.jpg",
+                  "movieId": 141052,
+                  "overview": "Fueled by his restored faith in humanity and inspired",
+                  "releaseDate": "2017-11-15",
+                  "title": "Justice League",
+                  "userId": null,
+                  "voteAverage": 6.6,
+                },
+              ],
+              "id": 1,
+              "name": "Batman",
+              "password": "darkKn1ght",
             },
           }
     }
@@ -52,7 +70,7 @@ ShallowWrapper {
           overview="Fueled by his restored faith in humanity and inspired"
           releaseDate="2017-11-15"
           title="Justice League"
-          userId=""
+          userId={1}
           voteAverage={6.6}
 />,
       ],
@@ -70,7 +88,7 @@ ShallowWrapper {
           "overview": "Fueled by his restored faith in humanity and inspired",
           "releaseDate": "2017-11-15",
           "title": "Justice League",
-          "userId": "",
+          "userId": 1,
           "voteAverage": 6.6,
         },
         "ref": null,
@@ -93,7 +111,7 @@ ShallowWrapper {
             overview="Fueled by his restored faith in humanity and inspired"
             releaseDate="2017-11-15"
             title="Justice League"
-            userId=""
+            userId={1}
             voteAverage={6.6}
 />,
         ],
@@ -111,7 +129,7 @@ ShallowWrapper {
             "overview": "Fueled by his restored faith in humanity and inspired",
             "releaseDate": "2017-11-15",
             "title": "Justice League",
-            "userId": "",
+            "userId": 1,
             "voteAverage": 6.6,
           },
           "ref": null,
