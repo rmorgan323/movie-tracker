@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { userLogout, getMovies } from '../../actions';
+import { NavLink } from 'react-router-dom';
 import determineUser from '../../helper/determineUser/determineUser';
-import './Header.css';
+import { userLogout, getMovies } from '../../actions';
 import PropTypes from 'prop-types';
+import './Header.css';
 
 class Header extends Component {
   componentDidMount = () => {
@@ -61,7 +61,6 @@ export const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
 
 Header.propTypes = {
-// location: PropTypes.string,
   storeMovies: PropTypes.array,
   user: PropTypes.object,
   logoutUser: PropTypes.func
