@@ -56,18 +56,18 @@ export const userLogout = () => ({
   type: 'USER_LOGOUT'
 });
 
-export const checkUserFavorites = (userId) => async dispatch => {
+export const checkUserFavorites = userId => async dispatch => {
   const response = await getUserFavorites(userId);
 
   dispatch(setUserFavorites(response.data));
 };
 
-export const setUserFavorites = (favorites) => ({
+export const setUserFavorites = favorites => ({
   type: 'SET_USER_FAVORITES',
   favorites
 });
 
-export const addPost = (movie) => async dispatch => {
+export const addPost = movie => async dispatch => {
   const response = await postNewFavoriteData(movie);
 
   if (response.status === 'success') {
@@ -75,12 +75,12 @@ export const addPost = (movie) => async dispatch => {
   }
 };
 
-export const addFavorite = (movie) => ({
+export const addFavorite = movie => ({
   type: 'ADD_FAVORITE',
   movie
 });
 
-export const deletePost = (movie) => async dispatch => {
+export const deletePost = movie => async dispatch => {
   const response = await deleteFavoriteData(movie.userId, movie.movieId);
 
   if (response.status === 'success') {
@@ -88,7 +88,7 @@ export const deletePost = (movie) => async dispatch => {
   }
 };
 
-export const deleteFavorite = (movie) => ({
+export const deleteFavorite = movie => ({
   type: 'DELETE_FAVORITE',
   movie
 });
