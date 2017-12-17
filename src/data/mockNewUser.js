@@ -5,11 +5,11 @@ export const mockNewUser = {
 };
 
 export const newUserApiResponse = {
-    "status": "success",
-    "message": "New user created",
-    "id": 38
-}
+  status: 'success',
+  message: 'New user created',
+  id: 38
+};
 
 export const newUserError = {
-    "error": "Key (email)=(luke@skywalker.com) already exists."
-}
+  error: 'Key (email)=(luke@skywalker.com) already exists.'
+};
