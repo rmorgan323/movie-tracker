@@ -7,7 +7,12 @@
   position: relative;
   margin-bottom: 10px; }
   .header h1 {
-    color: #fff; }
+    color: #aaa;
+    font-weight: 300;
+    letter-spacing: 10px;
+    font-size: 34px; }
+    .header h1 span {
+      color: #fff; }
   .header a {
     text-decoration: none; }
   .header button {
@@ -23,7 +28,8 @@
     font-size: 15px;
     width: 120px;
     background-color: rgba(255, 255, 255, 0.7);
-    transition: background-color .2s ease-in-out; }
+    transition: background-color .2s ease-in-out;
+    outline: none; }
   .header button:hover {
     background-color: #1fffff;
     transition: background-color .6s ease-in-out; }
@@ -43,9 +49,23 @@
   .header .login-message {
     color: #1fffff; }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 690px) {
   .header {
-    height: 100px; }
-    .header h1 {
-      width: 200px;
-      text-align: center; } }
+    display: flex;
+    flex-direction: column;
+    height: unset;
+    padding: 20px 0;
+    text-align: center; }
+    .header button, .header .login, .header .signup {
+      position: static; }
+    .header .header-box {
+      display: flex;
+      align-content: center;
+      justify-content: space-around;
+      flex-direction: column;
+      height: 90px; } }
+
+@media screen and (max-width: 400px) {
+  .header h1 {
+    text-align: center;
+    font-size: 24px; } }

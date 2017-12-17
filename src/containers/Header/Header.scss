@@ -8,7 +8,14 @@
 	margin-bottom: 10px;
 
 	h1 {
-		color: #fff;
+		color: #aaa;
+    font-weight: 300;
+    letter-spacing: 10px;
+    font-size: 34px;
+
+		span {
+			color: #fff;
+		}
 	}
 
 	a {
@@ -29,12 +36,12 @@
     width: 120px;
     background-color: rgba(255,255,255, .7);
     transition: background-color .2s ease-in-out;
+    outline: none;
 	}
 
 	button:hover {
 		background-color: #1fffff;
     transition: background-color .6s ease-in-out;
-
 	}
 
 	.login, .signup {
@@ -63,19 +70,36 @@
 	.login-message {
 		color: #1fffff;
 	}
-
-
 }
 
+@media screen and (max-width: 690px) {
+	.header {
+		display: flex;
+		flex-direction: column;
+		height: unset;
+		padding: 20px 0;
+		text-align: center;
 
+		button, .login, .signup {
+			position: static;
+		}
+
+		.header-box {
+			display: flex;
+			align-content: center;
+			justify-content: space-around;
+			flex-direction: column;
+			height: 90px;
+		}
+	}
+}
 
 @media screen and (max-width: 400px) {
 	.header {
-		height: 100px;
 
 		h1 {
-			width: 200px;
 			text-align: center;
+			font-size: 24px;
 		}
 	}
 }
