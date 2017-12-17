@@ -8,6 +8,7 @@ const Routes = () => {
     <div>
       <Route path="/login" component={ControlledForm} />
       <Route path="/signup" component={ControlledForm} />
+      <Route path="/favorites" component={CardContainer} />
       <Route exact path="/" component={CardContainer} />
     </div>
   );

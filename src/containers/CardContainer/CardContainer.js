@@ -6,13 +6,26 @@ import { withRouter } from 'react-router-dom';
 
 export const CardContainer = props => {
   let userId;
+
+  const endpoint = props.location.pathname;
+  const favoritesArray = props.movies.reduce((newArray, movie) => {
+    props.user.userInfo.favorites.forEach(favorite => {
+      if (favorite.title === movie.title) {
+        newArray.push(movie)
+      }
+    })
+    return newArray;
+  }, [])
+
+  const cardArray = endpoint === '/favorites' ? favoritesArray : props.movies 
+
   if (Object.keys(props.user).length !== 0) {
     userId = props.user.userInfo.id;
   } else {
     userId = null;
   }
 
-  const cards = props.movies.map((card) => {
+  const cards = cardArray.map((card) => {
 
     return (
       <Card

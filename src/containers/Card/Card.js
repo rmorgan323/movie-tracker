@@ -15,8 +15,7 @@ const Card = (props) => {
       props.addFavorite(movieBundle);
     }
   }
-
-
+  
   return (  
       <div className="card">
 
@@ -27,7 +26,7 @@ const Card = (props) => {
       <h4>Released: {releaseDate}</h4>
       <h4>Average Review: {voteAverage}</h4>
       <h4 className="overview">Overview: {overview}</h4>
-      <button onClick={() => handleFavorites(props, movieBundle)}
+      <button onClick={() => userId ? handleFavorites(props, movieBundle) : alert('hey idiot, why not sign up??')}
               className={ favorite ? 'star-solid' : 'star-outline' }
       ></button>
     </div>
