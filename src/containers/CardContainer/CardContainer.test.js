@@ -18,15 +18,31 @@ describe('CardContainer tests', () => {
 
     renderedCardContainer = shallow(
       <CardContainer
-        movies={mockMovies}
+        movies={[]}
         user={mockUser}
         location={mockLocation}
       />
     );
   });
+
   it('Should match the snapshot', () => {
     expect(renderedCardContainer).toMatchSnapshot();
   });
+
+  it('Should be able to render user favorites based on pathname', () => {
+    expect(renderedCardContainer.find('Connect(Component)').length).toEqual(0)
+
+    mockLocation.pathname = '/favorites'
+    renderedCardContainer = shallow(
+      <CardContainer
+        movies={mockMovies}
+        user={mockUser}
+        location={mockLocation}
+      />
+    );
+
+    expect(renderedCardContainer.find('Connect(Component)').length).toEqual(1)
+  })
 
   describe('mapStateToProps tests', () => {
     it('Should pull movies from store', () => {
