@@ -18,15 +18,6 @@ class ControlledForm extends Component {
     };
   }
 
-  handleInputChange = event => {
-    let value = event.target.value;
-    let property = event.target.className;
-
-    this.setState({
-      users: { ...this.state.users, [property]: value }
-    });
-  };
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.user === 'error-signup') {
       this.setState({
@@ -46,6 +37,16 @@ class ControlledForm extends Component {
     }
   }
 
+  handleInputChange = event => {
+    let value = event.target.value;
+    let property = event.target.className;
+
+    this.setState({
+      users: { ...this.state.users, [property]: value }
+    });
+  };
+
+
   handleSubmit = async event => {
     event.preventDefault();
     const endPoint = this.props.location.pathname;
@@ -58,7 +59,7 @@ class ControlledForm extends Component {
   };
 
   render() {
-    let endPoint = this.props.location.pathname;
+    const endPoint = this.props.location.pathname;
     return (
       <div className="form-component">
         <div className="form-button-container">
