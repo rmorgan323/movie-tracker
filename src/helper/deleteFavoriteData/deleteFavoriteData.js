@@ -1,4 +1,4 @@
-export const removeFavorite = async (userId, movieId) => {
+export const deleteFavoriteData = async (userId, movieId) => {
   const removeFetch = await fetch(
     `http://localhost:3000/api/users/${userId}/favorites/${movieId}`,
     {
@@ -14,4 +14,4 @@ export const removeFavorite = async (userId, movieId) => {
   return response;
 };
 
-export default removeFavorite;
+export default deleteFavoriteData;
