@@ -24,6 +24,7 @@ class Header extends Component {
 		return (
 			<div>
 					<div className="login login-message">Welcome, {this.props.user.userInfo.name}</div>
+					<NavLink to='/favorites'><button>FAVORITES</button></NavLink>
 					<NavLink className="signup nav-link" to='/' onClick={this.props.logoutUser} >Sign-Out</NavLink>
 				</div>
 		)
@@ -34,7 +35,9 @@ class Header extends Component {
 																											: this.noUserRender()
 		return (
 			<div className="header">
-				<h1>Movie Tracker</h1>
+				<NavLink to='/' >
+					<h1>Movie Tracker</h1>
+				</NavLink>
 				{headerLinks}
 			</div>
 		)

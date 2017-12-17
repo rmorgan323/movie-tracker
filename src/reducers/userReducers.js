@@ -29,7 +29,7 @@ const userReducers = (store = defaultStore, action) => {
             return action.msg
 
         case 'USER_LOGOUT':
-            return {}
+            return store = defaultStore
 
         case 'DELETE_FAVORITE':
             return Object.assign(
