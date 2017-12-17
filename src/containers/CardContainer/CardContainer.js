@@ -7,7 +7,12 @@ import './CardContainer.css';
 export const CardContainer = props => {
   let userId;
 
-  const endpoint = props.location.pathname;
+  if (Object.keys(props.user).length !== 0) {
+    userId = props.user.userInfo.id;
+  } else {
+    userId = null;
+  }
+
   const favoritesArray = props.movies.reduce((newArray, movie) => {
     props.user.userInfo.favorites.forEach(favorite => {
       if (favorite.title === movie.title) {
@@ -17,16 +22,11 @@ export const CardContainer = props => {
     return newArray;
   }, []);
 
-  const cardArray = endpoint === '/favorites' ? favoritesArray : props.movies; 
+  const endpoint = props.location.pathname;
 
-  if (Object.keys(props.user).length !== 0) {
-    userId = props.user.userInfo.id;
-  } else {
-    userId = null;
-  }
+  const cardArray = endpoint === '/favorites' ? favoritesArray : props.movies;
 
-  const cards = cardArray.map((card) => {
-
+  const cards = cardArray.map(card => {
     return (
       <Card
         key={card.movieId}
