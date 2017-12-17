@@ -3,6 +3,7 @@ import './CardContainer.css';
 import Card from '../Card/Card';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const CardContainer = props => {
   let userId;
@@ -11,13 +12,13 @@ export const CardContainer = props => {
   const favoritesArray = props.movies.reduce((newArray, movie) => {
     props.user.userInfo.favorites.forEach(favorite => {
       if (favorite.title === movie.title) {
-        newArray.push(movie)
+        newArray.push(movie);
       }
-    })
+    });
     return newArray;
-  }, [])
+  }, []);
 
-  const cardArray = endpoint === '/favorites' ? favoritesArray : props.movies 
+  const cardArray = endpoint === '/favorites' ? favoritesArray : props.movies; 
 
   if (Object.keys(props.user).length !== 0) {
     userId = props.user.userInfo.id;
@@ -47,8 +48,14 @@ export const CardContainer = props => {
 export const mapStateToProps = store => {
   return {
     movies: store.movies,
-    user: store.user,
+    user: store.user
   };
 };
 
 export default withRouter(connect(mapStateToProps, null)(CardContainer));
+
+CardContainer.propTypes = {
+  location: PropTypes.string,
+  movies: PropTypes.array,
+  user: PropTypes.object
+};

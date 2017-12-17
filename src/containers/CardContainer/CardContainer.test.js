@@ -11,7 +11,7 @@ describe('CardContainer tests', () => {
   });
 
   it('Should display cards from props', () => {
-    const mockMovies = [mockMovie]
+    const mockMovies = [mockMovie];
 
     const renderedCardContainer = shallow(<CardContainer movies={mockMovies} />);
 
