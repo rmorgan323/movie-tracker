@@ -110,7 +110,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(actions.checkForUser(user));
     },
     getUserFavorites: (id) => {
-      dispatch(actions.getUserFavorites(id));
+      dispatch(actions.checkUserFavorites(id));
     }
   };
 };
