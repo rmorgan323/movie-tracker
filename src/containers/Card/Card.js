@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/';
+import PropTypes from 'prop-types';
 import './Card.css';
 
 const Card = (props) => {
@@ -54,3 +55,18 @@ export const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
+
+Card.propTypes = {
+  movieId: PropTypes.string,
+  userId: PropTypes.string,
+  title: PropTypes.string,
+  releaseDate: PropTypes.string,
+  voteAverage: PropTypes.string,
+  overview: PropTypes.string,
+  image: PropTypes.string,
+  location: PropTypes.string,
+  movies: PropTypes.array,
+  user: PropTypes.object,
+  deleteFavorite: PropTypes.func,
+  addFavorite: PropTypes.func
+};
