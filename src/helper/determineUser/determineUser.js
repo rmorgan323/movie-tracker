@@ -4,6 +4,6 @@ const determineUser = (user) => {
   } else {
     return true;
   }
-}
+};
 
 export default determineUser;
