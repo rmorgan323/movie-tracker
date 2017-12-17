@@ -23,7 +23,7 @@ const cleanDate = date => {
 };
 
 const sortMovies = array => {
-  return array.sort( (aMovie, bMovie) => {
+  return array.sort((aMovie, bMovie) => {
     const aDate = aMovie.releaseDate.split('/').splice(0, 2).join('');
     const bDate = bMovie.releaseDate.split('/').splice(0, 2).join('');
 
