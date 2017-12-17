@@ -4,7 +4,7 @@ import getUser from '../helper/getUser/getUser';
 import checkUser from '../helper/checkUser/checkUser';
 import getFavesOnLogin from '../helper/getFavorites/getFavorites';
 import postNewFavoriteData from '../helper/postNewFavoriteData/postNewFavoriteData';
-import removeFavorite from '../helper/deleteFavorite/deleteFavorite';
+import deleteFavoriteData from '../helper/deleteFavoriteData/deleteFavoriteData';
 
 export const makeMovieArray = movies => ({
   type: 'MAKE_MOVIE_ARRAY',
@@ -55,7 +55,7 @@ export const userLogout = () => ({
 });
 
 export const deletePost = (movie) => async dispatch => {
-  const response = await removeFavorite(movie.userId, movie.movieId);
+  const response = await deleteFavoriteData(movie.userId, movie.movieId);
 
   if (response.status === 'success') {
     dispatch(deleteFavorite(movie));
