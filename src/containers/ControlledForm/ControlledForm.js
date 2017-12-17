@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as actions from '../../actions';
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './ControlledForm.css';
 import PropTypes from 'prop-types';
@@ -115,7 +115,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ControlledForm));
+export default connect(mapStateToProps, mapDispatchToProps)(ControlledForm);
 
 ControlledForm.propTypes = {
   user: PropTypes.object,
