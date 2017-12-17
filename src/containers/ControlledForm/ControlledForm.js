@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import * as actions from '../../actions';
 import './ControlledForm.css';
 
-class ControlledForm extends Component {
+export class ControlledForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -115,13 +115,13 @@ class ControlledForm extends Component {
   }
 }
 
-const mapStateToProps = store => {
+export const mapStateToProps = store => {
   return {
     user: store.user
   };
 };
 
-const mapDispatchToProps = dispatch => {
+export const mapDispatchToProps = dispatch => {
   return {
     getUsers: user => {
       dispatch(actions.fetchUsers(user));
@@ -138,10 +138,13 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(ControlledForm);
 
 ControlledForm.propTypes = {
-  user: PropTypes.object,
+  user: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
   history: PropTypes.object,
   getUserFavorites: PropTypes.func,
-  location: PropTypes.string,
+  location: PropTypes.object,
   checkUsers: PropTypes.func,
   getUsers: PropTypes.func
 };
