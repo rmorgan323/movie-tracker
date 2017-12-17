@@ -1,4 +1,4 @@
-export default {
+export const mockEmptyUser = {
   signedIn: false,
   userInfo: {
     id: '',
