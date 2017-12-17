@@ -1,5 +1,5 @@
 import { getRecentMovies } from '../helper/getRecentMovies/getRecentMovies';
-import { addNewUser } from '../helper/addNewUser/addNewUser';
+import addNewUser from '../helper/addNewUser/addNewUser';
 import getUser from '../helper/getUser/getUser';
 import checkUser from '../helper/checkUser/checkUser';
 import getFavesOnLogin from '../helper/getFavorites/getFavorites';
