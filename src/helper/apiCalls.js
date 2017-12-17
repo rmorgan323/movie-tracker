@@ -1,10 +1,9 @@
-import { cleanRecentData } from './helper.js';
+import { cleanRecentData } from './cleanRecentData/cleanRecentData';
 
 export const getRecentMovies = async () => {
   try {
-    /*eslint-disable */
+    /*eslint-disable max-len*/
     const fetchRaw = await fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=e321dec5936568598ab078a77503adb8&language=en-US&page=1');
-		/*eslint-enable */
     const moviesObj = await fetchRaw.json();
     const cleanData = cleanRecentData(moviesObj.results);
 
