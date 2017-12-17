@@ -1,7 +1,7 @@
 import * as actions from '../index';
 import mockMovie from '../../data/mockMovie';
 
-describe('Movie Array tests', () => {
+describe('Movie Array Actions tests', () => {
   it('Has a type of MAKE_MOVIE_ARRAY', () => {
     const movies = [mockMovie];
     const expected = {
