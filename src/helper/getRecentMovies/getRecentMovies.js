@@ -1,4 +1,4 @@
-import { cleanRecentData } from '../cleanRecentData/cleanRecentData';
+import cleanRecentData from '../cleanRecentData/cleanRecentData';
 
 const getRecentMovies = async () => {
   try {

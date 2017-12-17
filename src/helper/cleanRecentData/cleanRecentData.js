@@ -1,4 +1,4 @@
-export const cleanRecentData = (moviesObj) => {
+const cleanRecentData = moviesObj => {
   const cleanData = moviesObj.reduce((cleanArray, movie) => {
     cleanArray.push({
       userId: null,
@@ -15,14 +15,14 @@ export const cleanRecentData = (moviesObj) => {
   return cleanData;
 };
 
-const cleanDate = (date) => {
+const cleanDate = date => {
   const dateArray = date.split('-');
   const newDate = [dateArray[1], dateArray[2], dateArray[0]];
 
   return newDate.join('/');
 };
 
-const sortMovies = (array) => {
+const sortMovies = array => {
   return array.sort( (aMovie, bMovie) => {
     const aDate = aMovie.releaseDate.split('/').splice(0, 2).join('');
     const bDate = bMovie.releaseDate.split('/').splice(0, 2).join('');
@@ -30,3 +30,5 @@ const sortMovies = (array) => {
     return bDate - aDate;
   });
 };
+
+export default cleanRecentData;
