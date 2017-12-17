@@ -17,11 +17,7 @@ describe('CardContainer tests', () => {
     mockLocation = mockLocationData;
 
     renderedCardContainer = shallow(
-      <CardContainer
-        movies={[]}
-        user={mockUser}
-        location={mockLocation}
-      />
+      <CardContainer movies={[]} user={mockUser} location={mockLocation} />
     );
   });
 
@@ -30,9 +26,9 @@ describe('CardContainer tests', () => {
   });
 
   it('Should be able to render user favorites based on pathname', () => {
-    expect(renderedCardContainer.find('Connect(Component)').length).toEqual(0)
+    expect(renderedCardContainer.find('Connect(Component)').length).toEqual(0);
 
-    mockLocation.pathname = '/favorites'
+    mockLocation.pathname = '/favorites';
     renderedCardContainer = shallow(
       <CardContainer
         movies={mockMovies}
@@ -41,8 +37,8 @@ describe('CardContainer tests', () => {
       />
     );
 
-    expect(renderedCardContainer.find('Connect(Component)').length).toEqual(1)
-  })
+    expect(renderedCardContainer.find('Connect(Component)').length).toEqual(1);
+  });
 
   describe('mapStateToProps tests', () => {
     it('Should pull movies from store', () => {
@@ -57,10 +53,10 @@ describe('CardContainer tests', () => {
     it('Should pull a user from store', () => {
       const mockStore = {
         user: mockUser
-      }
+      };
       const result = mapStateToProps(mockStore);
 
       expect(result.user).toEqual(mockStore.user);
-    })
+    });
   });
 });
