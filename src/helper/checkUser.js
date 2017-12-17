@@ -5,11 +5,11 @@ export const checkUser = async (user) =>{
     headers: {
       'Content-Type': 'application/json'
     }
-  })
+  });
    
   if (fetchUserPost.status >= 400) {
-    return fetchUserPost.status
+    return fetchUserPost.status;
   }
-  const jsonResponse = await fetchUserPost.json()
+  const jsonResponse = await fetchUserPost.json();
   return jsonResponse;
-}
+};
