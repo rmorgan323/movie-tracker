@@ -5,7 +5,38 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
+    location={
+        Object {
+            "hash": "",
+            "pathname": "",
+            "search": "",
+            "state": undefined,
+          }
+    }
     movies={Array []}
+    user={
+        Object {
+            "signedIn": true,
+            "userInfo": Object {
+              "email": "supermanSux@batmanrulez.com",
+              "favorites": Array [
+                Object {
+                  "favorite": false,
+                  "image": "https://image.tmdb.org/t/p/w500/9rtrRGeRnL0JKtu9IMBWsmlmmZz.jpg",
+                  "movieId": 141052,
+                  "overview": "Fueled by his restored faith in humanity and inspired",
+                  "releaseDate": "2017-11-15",
+                  "title": "Justice League",
+                  "userId": null,
+                  "voteAverage": 6.6,
+                },
+              ],
+              "id": 1,
+              "name": "Batman",
+              "password": "darkKn1ght",
+            },
+          }
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
