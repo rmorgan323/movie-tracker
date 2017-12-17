@@ -6,8 +6,32 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
     location={Object {}}
-    movies={Array []}
-    user={Object {}}
+    movies={
+        Array [
+            Object {
+              "favorite": false,
+              "image": "https://image.tmdb.org/t/p/w500/9rtrRGeRnL0JKtu9IMBWsmlmmZz.jpg",
+              "movieId": 141052,
+              "overview": "Fueled by his restored faith in humanity and inspired",
+              "releaseDate": "2017-11-15",
+              "title": "Justice League",
+              "userId": null,
+              "voteAverage": 6.6,
+            },
+          ]
+    }
+    user={
+        Object {
+            "signedIn": true,
+            "userInfo": Object {
+              "email": "",
+              "favorites": Array [],
+              "id": "",
+              "name": "",
+              "password": "",
+            },
+          }
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -21,11 +45,39 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [],
+      "children": Array [
+        <Connect(Component)
+          image="https://image.tmdb.org/t/p/w500/9rtrRGeRnL0JKtu9IMBWsmlmmZz.jpg"
+          movieId={141052}
+          overview="Fueled by his restored faith in humanity and inspired"
+          releaseDate="2017-11-15"
+          title="Justice League"
+          userId=""
+          voteAverage={6.6}
+/>,
+      ],
       "className": "card-container",
     },
     "ref": null,
-    "rendered": Array [],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "141052",
+        "nodeType": "class",
+        "props": Object {
+          "image": "https://image.tmdb.org/t/p/w500/9rtrRGeRnL0JKtu9IMBWsmlmmZz.jpg",
+          "movieId": 141052,
+          "overview": "Fueled by his restored faith in humanity and inspired",
+          "releaseDate": "2017-11-15",
+          "title": "Justice League",
+          "userId": "",
+          "voteAverage": 6.6,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -34,11 +86,39 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [],
+        "children": Array [
+          <Connect(Component)
+            image="https://image.tmdb.org/t/p/w500/9rtrRGeRnL0JKtu9IMBWsmlmmZz.jpg"
+            movieId={141052}
+            overview="Fueled by his restored faith in humanity and inspired"
+            releaseDate="2017-11-15"
+            title="Justice League"
+            userId=""
+            voteAverage={6.6}
+/>,
+        ],
         "className": "card-container",
       },
       "ref": null,
-      "rendered": Array [],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "141052",
+          "nodeType": "class",
+          "props": Object {
+            "image": "https://image.tmdb.org/t/p/w500/9rtrRGeRnL0JKtu9IMBWsmlmmZz.jpg",
+            "movieId": 141052,
+            "overview": "Fueled by his restored faith in humanity and inspired",
+            "releaseDate": "2017-11-15",
+            "title": "Justice League",
+            "userId": "",
+            "voteAverage": 6.6,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": "div",
     },
   ],

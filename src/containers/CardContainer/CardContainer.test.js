@@ -2,6 +2,7 @@ import { CardContainer, mapStateToProps } from './CardContainer';
 import React from 'react';
 import { shallow } from 'enzyme';
 import mockMovie from '../../data/mockMovie';
+import mockUserData from '../../data/mockUser';
 
 describe('CardContainer tests', () => {
   let mockMovies;
@@ -10,8 +11,8 @@ describe('CardContainer tests', () => {
   let renderedCardContainer;
 
   beforeEach(() => {
-    mockMovies = [];
-    mockUser = {};
+    mockMovies = [mockMovie];
+    mockUser = mockUserData;
     mockLocation = {};
 
     renderedCardContainer = shallow(
@@ -27,8 +28,6 @@ describe('CardContainer tests', () => {
   });
 
   it('Should display cards from props', () => {
-    mockMovies = [mockMovie];
-
     expect(renderedCardContainer.find('Card').length).toEqual(1);
   });
 
