@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import determineUser from '../../helper/determineUser/determineUser';
-import { userLogout, getMovies } from '../../actions';
+import { userLogout, getMovies, setUser, checkUserFavorites } from '../../actions';
 import PropTypes from 'prop-types';
 import './Header.css';
 
 export class Header extends Component {
   componentDidMount = () => {
     this.props.storeMovies();
+
+    if (localStorage.movieTracker) {
+      const user = JSON.parse(localStorage.getItem('movieTracker'));
+      this.props.setUserFromLs(user);
+      this.props.setFavoritesFromLs(user.id);
+    }
   };
 
   noUserRender = () => {
@@ -75,7 +81,9 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     logoutUser: () => dispatch(userLogout()),
-    storeMovies: () => dispatch(getMovies())
+    storeMovies: () => dispatch(getMovies()),
+    setUserFromLs: user => dispatch(setUser(user)),
+    setFavoritesFromLs: userId => dispatch(checkUserFavorites(userId))
   };
 };
 
@@ -84,5 +92,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Header);
 Header.propTypes = {
   storeMovies: PropTypes.func,
   user: PropTypes.object,
-  logoutUser: PropTypes.func
+  logoutUser: PropTypes.func,
+  setUserFromLs: PropTypes.func,
+  setFavoritesFromLs: PropTypes.func
 };

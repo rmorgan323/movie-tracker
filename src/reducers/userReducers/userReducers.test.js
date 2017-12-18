@@ -11,6 +11,21 @@ import {
 import { mockNewUserWithoutFaves } from '../../data/mockNewUserWithoutFaves';
 import { mockNewUser2 } from '../../data/mockNewUser';
 
+global.localStorage = {
+  getItem(keyword) {
+    if (!global.localStorage[keyword]) {
+      return null;
+    }
+    return JSON.stringify(global.localStorage[keyword]);
+  },
+  setItem(keyword, value) {
+    global.localStorage[keyword] = value;
+  },
+  removeItem(keyword) {
+    global.localStorage[keyword] = undefined;
+  }
+};
+
 describe('userReducer tests', () => {
   describe('logins and logouts tests', () => {
     it('should return the default store on page load', () => {
