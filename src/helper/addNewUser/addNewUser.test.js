@@ -1,11 +1,11 @@
 import addNewUser from './addNewUser.js';
-import {mockNewUser, newUserApiResponse, newUserError} from '../../data/mockNewUser.js';
+import {mockNewUser, newUserApiResponse} from '../../data/mockNewUser.js';
 
 describe('add new user', () => {
-  window.fetch = jest.fn().mockImplementation(() => Promise.resolve ({
+  window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
     json: () =>
-    Promise.resolve (
-      newUserApiResponse
+      Promise.resolve(
+        newUserApiResponse
       )
   })
   );
@@ -26,9 +26,9 @@ describe('add new user', () => {
 
   it('addNewUser is called with the correct params', async () => {
     const expected = ["http://localhost:3000/api/users/new",
-    {"body": undefined, 
-    "headers": {"Content-Type": "application/json"},
-    "method": "POST"}]
+      {"body": undefined, 
+        "headers": {"Content-Type": "application/json"},
+        "method": "POST"}];
 
     await addNewUser(mockNewUser);
     expect(window.fetch).toHaveBeenCalledWith(...expected);

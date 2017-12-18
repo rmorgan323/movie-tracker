@@ -26,7 +26,7 @@ describe('fetch checkUser tests', () => {
 
   it('deleteFavoriteData is called with the correct params', async () =>{
     const expected = [
-      'http://localhost:3000/api/users/undefined/favorites/undefined', {
+      'http://localhost:3000/api/users/1/favorites/181808', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
