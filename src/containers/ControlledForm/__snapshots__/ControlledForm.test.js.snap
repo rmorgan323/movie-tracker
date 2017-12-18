@@ -13,18 +13,7 @@ ShallowWrapper {
             "state": undefined,
           }
     }
-    user={
-        Object {
-            "signedIn": false,
-            "userInfo": Object {
-              "email": "",
-              "favorites": Array [],
-              "id": "",
-              "name": "",
-              "password": "",
-            },
-          }
-    }
+    user={undefined}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
