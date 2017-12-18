@@ -30,6 +30,7 @@ const userReducers = (store = defaultStore, action) => {
     return action.msg;
 
   case 'USER_LOGOUT':
+    localStorage.removeItem('movieTracker');
     return (store = defaultStore);
 
   case 'DELETE_FAVORITE':
