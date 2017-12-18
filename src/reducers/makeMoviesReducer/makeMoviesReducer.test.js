@@ -16,3 +16,4 @@ describe('makeMoviesReducer tests', () => {
     expect(makeMoviesReducer(undefined, actions.makeMovieArray(movieArray))).toEqual(expected);
   });
 });
+

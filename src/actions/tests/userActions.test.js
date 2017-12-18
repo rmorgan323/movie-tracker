@@ -1,21 +1,10 @@
 import * as actions from '../index';
-
-const mockUser = {
-  signedIn: false,
-  userInfo: {
-    id: '',
-    name: '',
-    password: '',
-    email: '',
-    favorites: []
-  }
-};
-
-const mockMessage = 'That email and password do not match. Try again or create an account.'
+import mockEmptyUser from '../../data/mockEmptyUser.js';
+import mockMessage from '../../data/mockMessage.js';
 
 describe('User Actions tests', () => {
 	it('should create a SET_USER action', () => {
-		const user = [mockUser];
+		const user = [mockEmptyUser];
 		const expected = {
 			type: 'SET_USER',
 			user
@@ -25,7 +14,7 @@ describe('User Actions tests', () => {
 	})
 
 	it('should create an ADD_NEW_USER action', () => {
-		const user = [mockUser];
+		const user = [mockEmptyUser];
 		const expected = {
 			type: 'ADD_NEW_USER',
 			user

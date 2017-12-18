@@ -1,4 +1,4 @@
-export const mockEmptyUser = {
+export const mockDefaultStore = {
   signedIn: false,
   userInfo: {
     id: '',
