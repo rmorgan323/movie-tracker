@@ -8,7 +8,6 @@ import { shallow } from 'enzyme';
 import mockEmptyUser from '../../data/mockEmptyUser';
 import mockRealUser from '../../data/mockRealUser';
 import mockLocationData from '../../data/mockLocation';
-import * as actions from '../../actions';
 
 const defaultUserState = {
   name: '',

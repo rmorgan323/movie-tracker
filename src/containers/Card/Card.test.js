@@ -4,7 +4,6 @@ import { shallow } from 'enzyme';
 import mockEmptyUser from '../../data/mockEmptyUser';
 import mockRealUser from '../../data/mockRealUser';
 import mockMovie from '../../data/mockMovie';
-import * as actions from '../../actions';
 
 describe('Card tests', () => {
   let renderedCard;
