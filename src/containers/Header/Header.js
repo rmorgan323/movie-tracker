@@ -13,7 +13,7 @@ export class Header extends Component {
     if (localStorage.movieTracker) {
       const user = JSON.parse(localStorage.getItem('movieTracker'));
       this.props.setUserFromLs(user);
-      this.props.setFavoritesFromLs(user.id)
+      this.props.setFavoritesFromLs(user.id);
     }
   };
 
@@ -82,8 +82,8 @@ export const mapDispatchToProps = dispatch => {
   return {
     logoutUser: () => dispatch(userLogout()),
     storeMovies: () => dispatch(getMovies()),
-    setUserFromLs: (user) => dispatch(setUser(user)),
-    setFavoritesFromLs: (userId) => dispatch(checkUserFavorites(userId))
+    setUserFromLs: user => dispatch(setUser(user)),
+    setFavoritesFromLs: userId => dispatch(checkUserFavorites(userId))
   };
 };
 
@@ -93,5 +93,6 @@ Header.propTypes = {
   storeMovies: PropTypes.func,
   user: PropTypes.object,
   logoutUser: PropTypes.func,
-  setUserFromLs: PropTypes.func
+  setUserFromLs: PropTypes.func,
+  setFavoritesFromLs: PropTypes.func
 };
