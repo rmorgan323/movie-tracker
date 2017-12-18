@@ -82,7 +82,7 @@ export const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
 
 Header.propTypes = {
-  storeMovies: PropTypes.array,
+  storeMovies: PropTypes.func,
   user: PropTypes.object,
   logoutUser: PropTypes.func
 };
