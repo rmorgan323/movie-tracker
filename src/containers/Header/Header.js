@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import determineUser from '../../helper/determineUser/determineUser';
-import { userLogout, getMovies, setUser } from '../../actions';
+import { userLogout, getMovies, setUser, checkUserFavorites } from '../../actions';
 import PropTypes from 'prop-types';
 import './Header.css';
 
@@ -13,6 +13,7 @@ export class Header extends Component {
     if (localStorage.movieTracker) {
       const user = JSON.parse(localStorage.getItem('movieTracker'));
       this.props.setUserFromLs(user);
+      this.props.setFavoritesFromLs(user.id)
     }
   };
 
@@ -81,7 +82,8 @@ export const mapDispatchToProps = dispatch => {
   return {
     logoutUser: () => dispatch(userLogout()),
     storeMovies: () => dispatch(getMovies()),
-    setUserFromLs: (user) => dispatch(setUser(user))
+    setUserFromLs: (user) => dispatch(setUser(user)),
+    setFavoritesFromLs: (userId) => dispatch(checkUserFavorites(userId))
   };
 };
 
