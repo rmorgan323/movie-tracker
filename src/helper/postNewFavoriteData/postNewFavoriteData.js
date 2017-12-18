@@ -27,7 +27,6 @@ const postNewFavoriteData = async ({
     }
   );
   let response = await fetchFavorite.json();
-  console.log(response)
 
   return response;
 };
