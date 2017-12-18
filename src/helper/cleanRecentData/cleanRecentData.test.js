@@ -11,5 +11,5 @@ describe('Clean Data tests', () => {
     const expected = mockCleanData;
 
     expect(cleanRecentData(moviesObj)).toEqual(expected);
-  })
+  });
 });

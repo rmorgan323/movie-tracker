@@ -5,9 +5,9 @@ export const mockNewUser = {
 };
 
 export const mockNewUser2 = {
-	name: 'Tiger Woods',
-	password: 'masters',
-	email: 'eldrick@woods.com'
+  name: 'Tiger Woods',
+  password: 'masters',
+  email: 'eldrick@woods.com'
 };
 
 export const newUserApiResponse = {
