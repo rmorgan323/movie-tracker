@@ -4,8 +4,7 @@ describe('fetch user tests', () => {
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.resolve({
-        status: 200,
-        json: () => Promise.resolve({ results: mockSignInResponse.results })
+        status: 200
       })
     );
   });
