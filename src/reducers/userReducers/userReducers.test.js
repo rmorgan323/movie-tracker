@@ -8,9 +8,6 @@ import { mockMovie, mockMovieArray, userWithMovieArray, mockMovieWithUser } from
 import { mockNewUserWithoutFaves } from '../../data/mockNewUserWithoutFaves';
 import { mockNewUser2 } from '../../data/mockNewUser';
 
-
-
-
 describe('userReducer tests', () => {
 	describe('logins and logouts tests', () => {
 		it('should return the default store on page load', () => {
