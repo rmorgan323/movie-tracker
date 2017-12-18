@@ -8,11 +8,9 @@ import * as actions from '../../actions';
 
 describe('Card tests', () => {
   let renderedCard;
-  let mockMovieData;
   let mockUser;
 
   beforeEach(() => {
-    mockMovieData = mockMovie;
     mockUser = mockEmptyUser;
 
     renderedCard = shallow(<Card user={mockUser} />);
