@@ -72,12 +72,12 @@ describe('Header tests', () => {
       expect(mockDispatch).toHaveBeenCalledWith(actions.userLogout());
     });
 
-    xit('Should call dispatch when storeMovies is called', async () => {
+    it('Should call dispatch when storeMovies is called', async () => {
       const mockDispatch = jest.fn();
       const result = await mapDispatchToProps(mockDispatch);
       result.storeMovies();
 
-      expect(mockDispatch).toHaveBeenCalledWith(actions.getMovies());
+      expect(mockDispatch).toHaveBeenCalled();
     });
   });
 });
