@@ -1,4 +1,4 @@
-import mockMovie from './mockMovie';
+import { mockMovie } from './mockMovie';
 
 export default {
   signedIn: true,
