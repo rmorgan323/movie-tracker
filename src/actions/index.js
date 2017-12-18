@@ -31,6 +31,7 @@ export const checkForUser = user => async dispatch => {
   const response = await checkUser(user);
 
   if (response.status === 'success') {
+    localStorage.setItem('movieTracker', response.data)
     dispatch(setUser(response.data));
   } else {
     dispatch(signupFailure('error-login'));
