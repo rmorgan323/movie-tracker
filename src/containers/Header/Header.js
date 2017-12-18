@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import determineUser from '../../helper/determineUser/determineUser';
-import { userLogout, getMovies } from '../../actions';
+import { userLogout, getMovies, setUser } from '../../actions';
 import PropTypes from 'prop-types';
 import './Header.css';
 
 export class Header extends Component {
   componentDidMount = () => {
     this.props.storeMovies();
+
+    if (localStorage.movieTracker) {
+      const user = JSON.parse(localStorage.getItem('movieTracker'));
+      this.props.setUserFromLs(user);
+    }
   };
 
   noUserRender = () => {
@@ -75,7 +80,8 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     logoutUser: () => dispatch(userLogout()),
-    storeMovies: () => dispatch(getMovies())
+    storeMovies: () => dispatch(getMovies()),
+    setUserFromLs: (user) => dispatch(setUser(user))
   };
 };
 
