@@ -5,6 +5,18 @@ import { mockEmptyUser } from '../../data/mockEmptyUser';
 import { mockRealUser } from '../../data/mockRealUser';
 import * as actions from '../../actions';
 
+global.localStorage = {
+  getItem(keyword) {
+    if (!global.localStorage[keyword]) {
+      return null;
+    }
+    return JSON.stringify(global.localStorage[keyword]);
+  },
+  setItem(keyword, value) {
+    global.localStorage[keyword] = value;
+  }
+};
+
 describe('Header tests', () => {
   let renderedHeader;
   let mockStoreMovies;
