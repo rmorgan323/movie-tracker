@@ -26,6 +26,7 @@ describe('add new user', () => {
   });
 
   it('addNewUser is called with the correct params', async () => {
+
     const expected = [
       'http://localhost:3000/api/users/new',
       {
