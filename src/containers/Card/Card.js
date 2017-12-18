@@ -86,7 +86,10 @@ export default connect(mapStateToProps, mapDispatchToProps)(Card);
 
 Card.propTypes = {
   movieId: PropTypes.number,
-  userId: PropTypes.string,
+  userId: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   title: PropTypes.string,
   releaseDate: PropTypes.string,
   voteAverage: PropTypes.number,
