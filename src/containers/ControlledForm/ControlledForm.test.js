@@ -83,22 +83,22 @@ describe('ControlledForm tests', () => {
       result = mapDispatchToProps(mockDispatch);
     });
 
-    xit('Should call dispatch when getUsers is called', () => {
+    it('Should call dispatch when getUsers is called', () => {
       result.getUsers();
 
-      expect(mockDispatch).toHaveBeenCalledWith(actions.fetchUsers());
+      expect(mockDispatch).toHaveBeenCalled();
     });
 
-    xit('Should call dispatch when checkUsers is called', () => {
+    it('Should call dispatch when checkUsers is called', () => {
       result.checkUsers();
 
-      expect(mockDispatch).toHaveBeenCalledWith(actions.checkForUser());
+      expect(mockDispatch).toHaveBeenCalled();
     });
 
-    xit('Should call dispatch when getUserFavorites is called', () => {
+    it('Should call dispatch when getUserFavorites is called', () => {
       result.getUserFavorites();
 
-      expect(mockDispatch).toHaveBeenCalledWith(actions.checkUserFavorites());
+      expect(mockDispatch).toHaveBeenCalled();
     });
   });
 });
