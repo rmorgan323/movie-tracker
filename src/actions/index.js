@@ -21,7 +21,7 @@ export const fetchUsers = user => async dispatch => {
 
   if (response.status === 'success') {
     const user = await getUser(response.id);
-    localStorage.setItem('movieTracker', response.data)
+    localStorage.setItem('movieTracker', JSON.stringify(response.data));
     dispatch(setUser(user));
   } else {
     dispatch(signupFailure('error-signup'));
@@ -32,7 +32,7 @@ export const checkForUser = user => async dispatch => {
   const response = await checkUser(user);
 
   if (response.status === 'success') {
-    localStorage.setItem('movieTracker', response.data)
+    localStorage.setItem('movieTracker', JSON.stringify(response.data));
     dispatch(setUser(response.data));
   } else {
     dispatch(signupFailure('error-login'));
