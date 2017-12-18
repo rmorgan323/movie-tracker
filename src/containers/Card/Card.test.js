@@ -26,7 +26,7 @@ describe('Card tests', () => {
     expect(renderedCard.find('.star-outline').length).toEqual(1);
 
     mockUser = mockRealUser;
-    renderedCard = shallow(<Card user={mockUser} title={mockMovie.title} />)
+    renderedCard = shallow(<Card user={mockUser} title={mockMovie.title} />);
 
     expect(renderedCard.find('.star-outline').length).toEqual(0);
     expect(renderedCard.find('.star-solid').length).toEqual(1);
