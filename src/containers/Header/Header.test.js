@@ -1,8 +1,8 @@
 import { Header, mapStateToProps, mapDispatchToProps } from './Header';
 import React from 'react';
 import { shallow } from 'enzyme';
-import mockEmptyUser from '../../data/mockEmptyUser';
-import mockRealUser from '../../data/mockRealUser';
+import { mockEmptyUser } from '../../data/mockEmptyUser';
+import { mockRealUser } from '../../data/mockRealUser';
 import * as actions from '../../actions';
 
 describe('Header tests', () => {

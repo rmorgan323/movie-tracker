@@ -1,6 +1,6 @@
 import { mockMovie } from './mockMovie';
 
-export default {
+export const mockRealUser = {
   signedIn: true,
   userInfo: {
     id: 1,
