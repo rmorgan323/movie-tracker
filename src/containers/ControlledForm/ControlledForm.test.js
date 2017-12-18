@@ -5,9 +5,9 @@ import {
 } from './ControlledForm';
 import React from 'react';
 import { shallow } from 'enzyme';
-import mockEmptyUser from '../../data/mockEmptyUser';
-import mockRealUser from '../../data/mockRealUser';
-import mockLocationData from '../../data/mockLocation';
+import { mockEmptyUser } from '../../data/mockEmptyUser';
+import { mockRealUser } from '../../data/mockRealUser';
+import { mockLocationData } from '../../data/mockLocation';
 
 const defaultUserState = {
   name: '',
