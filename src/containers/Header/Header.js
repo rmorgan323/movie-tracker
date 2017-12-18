@@ -90,5 +90,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(Header);
 Header.propTypes = {
   storeMovies: PropTypes.func,
   user: PropTypes.object,
-  logoutUser: PropTypes.func
+  logoutUser: PropTypes.func,
+  setUserFromLs: PropTypes.func
 };
