@@ -57,7 +57,7 @@ export const Card = props => {
         onClick={() =>
           userId
             ? handleFavorites(props, movieBundle)
-            : alert('hey idiot, why not sign up??')
+            : alert('Make an account to save favorites!')
         }
         className={favorite ? 'star-solid' : 'star-outline'}
       />

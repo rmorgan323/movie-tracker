@@ -3,4 +3,4 @@ export default {
   pathname: '',
   search: '',
   state: undefined
-}
+};

@@ -6,7 +6,6 @@ export const mockMovie = {
   releaseDate: "2017-11-15",
   voteAverage: 6.6,
   overview: "Fueled by his restored faith in humanity and inspired",
-  favorite: false
 };
 
 export const mockMovieWithUser = {
@@ -17,7 +16,6 @@ export const mockMovieWithUser = {
   releaseDate: "2017-11-15",
   voteAverage: 6.6,
   overview: "Fueled by his restored faith in humanity and inspired",
-  favorite: false
 };
 
 export const mockMovieArray = [
@@ -29,7 +27,6 @@ export const mockMovieArray = [
 	  releaseDate: "2017-11-15",
 	  voteAverage: 6.6,
 	  overview: "Fueled by his restored faith in humanity and inspired",
-	  favorite: false
 	}
 ]
 
