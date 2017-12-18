@@ -21,7 +21,6 @@ ShallowWrapper {
               "email": "supermanSux@batmanrulez.com",
               "favorites": Array [
                 Object {
-                  "favorite": false,
                   "image": "https://image.tmdb.org/t/p/w500/9rtrRGeRnL0JKtu9IMBWsmlmmZz.jpg",
                   "movieId": 141052,
                   "overview": "Fueled by his restored faith in humanity and inspired",

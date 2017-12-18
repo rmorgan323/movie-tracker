@@ -2,8 +2,8 @@ import { CardContainer, mapStateToProps } from './CardContainer';
 import React from 'react';
 import { shallow } from 'enzyme';
 import { mockMovie } from '../../data/mockMovie';
-import mockRealUser from '../../data/mockRealUser';
-import mockLocationData from '../../data/mockLocation';
+import { mockRealUser } from '../../data/mockRealUser';
+import { mockLocationData } from '../../data/mockLocation';
 
 describe('CardContainer tests', () => {
   let mockMovies;
