@@ -1,3 +1,6 @@
+/*eslint-disable camelcase*/
+/*eslint-disable max-len*/
+/*eslint-disable id-blacklist*/
 export const mockRecentMoviesData = {
   results: [
     {
