@@ -12,7 +12,7 @@ const getRecentMovies = async () => {
     return cleanData;
 
   } catch (type) {
-    throw Error('Fetch Failed!');
+    return Error('Fetch Failed!');
   }
 };
 
