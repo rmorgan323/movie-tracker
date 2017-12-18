@@ -61,6 +61,8 @@ export const userLogout = () => ({
 export const checkUserFavorites = userId => async dispatch => {
   const response = await getUserFavorites(userId);
 
+  const user = JSON.parse(localStorage.getItem('movieTracker'));
+  localStorage.setItem('movieTracker', JSON.stringify(Object.assign({}, user, {favorites: response.data})))
   dispatch(setUserFavorites(response.data));
 };
 
