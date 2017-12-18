@@ -85,11 +85,11 @@ export const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
 
 Card.propTypes = {
-  movieId: PropTypes.string,
+  movieId: PropTypes.number,
   userId: PropTypes.string,
   title: PropTypes.string,
   releaseDate: PropTypes.string,
-  voteAverage: PropTypes.string,
+  voteAverage: PropTypes.number,
   overview: PropTypes.string,
   image: PropTypes.string,
   location: PropTypes.string,
