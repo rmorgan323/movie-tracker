@@ -6,7 +6,7 @@ import { userLogout, getMovies } from '../../actions';
 import PropTypes from 'prop-types';
 import './Header.css';
 
-class Header extends Component {
+export class Header extends Component {
   componentDidMount = () => {
     this.props.storeMovies();
   };
@@ -82,7 +82,7 @@ export const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
 
 Header.propTypes = {
-  storeMovies: PropTypes.array,
+  storeMovies: PropTypes.func,
   user: PropTypes.object,
   logoutUser: PropTypes.func
 };
