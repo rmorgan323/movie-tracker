@@ -44,4 +44,15 @@ describe('Header tests', () => {
 
     expect(renderedHeader.find('button').length).toEqual(1);
   });
+
+  describe('mapStateToProps tests', () => {
+    it('Should pull a user from store', () => {
+      const mockStore = {
+        user: mockRealUser
+      };
+      const result = mapStateToProps(mockStore);
+
+      expect(result.user).toEqual(mockStore.user);
+    })
+  })
 });
