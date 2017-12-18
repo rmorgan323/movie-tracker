@@ -3,6 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import mockEmptyUser from '../../data/mockEmptyUser';
 import mockRealUser from '../../data/mockRealUser';
+import * as actions from '../../actions';
 
 describe('Header tests', () => {
   let renderedHeader;
@@ -53,6 +54,30 @@ describe('Header tests', () => {
       const result = mapStateToProps(mockStore);
 
       expect(result.user).toEqual(mockStore.user);
-    })
-  })
+    });
+  });
+
+  describe('mapDispatchToProps tests', () => {
+    let mockDispatch;
+    let result;
+
+    beforeEach(() => {
+      mockDispatch = jest.fn();
+      result = mapDispatchToProps(mockDispatch);
+    });
+
+    it('Should call dispatch when logoutUser is called', () => {
+      result.logoutUser();
+
+      expect(mockDispatch).toHaveBeenCalledWith(actions.userLogout());
+    });
+
+    xit('Should call dispatch when storeMovies is called', async () => {
+      const mockDispatch = jest.fn();
+      const result = await mapDispatchToProps(mockDispatch);
+      result.storeMovies();
+
+      expect(mockDispatch).toHaveBeenCalledWith(actions.getMovies());
+    });
+  });
 });
