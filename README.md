@@ -12,7 +12,7 @@ This was our first foray into Redux, although we were already experienced in Rea
 
 ********
 
-The homepage immediately displays movies that are currently showing, and allows users to favorite them by clicking on the blue stars (which hover to solid) on each movie.  There are also links to login and signup on the nav bar.
+The homepage immediately displays movies that are currently showing, and allows users to favorite them by clicking on the white stars (which hover blue and go to solid blue when favorited) on each movie.  There are also links to login and signup on the nav bar.
 ![screenshot](public/home.png)
 
 ********
